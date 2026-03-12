@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Orvexa Labs — Web Design & AI Solutions</title>
+
+<meta name="description" content="Orvexa Labs builds premium web experiences that convert. Web design, development, and AI call assistants for ambitious businesses."/>
+<meta property="og:title" content="Orvexa Labs — Web Design & AI Solutions"/>
+<meta property="og:description" content="Premium web design that converts. Trusted by modern businesses."/>
+<meta property="og:type" content="website"/>
+
+<link rel="icon" type="image/png" href="Orvexa logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #080810;
+  --bg2: #0d0d1a;
+  --surface: #111124;
+  --surface2: #161630;
+  --border: rgba(108,59,255,0.15);
+  --border2: rgba(255,255,255,0.06);
+  --p1: #6C3BFF;
+  --p2: #8B5CF6;
+  --p3: #C084FC;
+  --text: #f0eeff;
+  --text2: #a09fc0;
+  --text3: #6b6a8a;
+  --grad: linear-gradient(135deg, #6C3BFF, #8B5CF6, #C084FC);
+  --grad2: linear-gradient(135deg, #6C3BFF 0%, #C084FC 100%);
+  --glow: 0 0 60px rgba(108,59,255,0.25);
+  --glow-sm: 0 0 30px rgba(108,59,255,0.18);
+  --r: 16px;
+  --r-sm: 10px;
+  --trans: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;line-height:1.15;letter-spacing:-0.02em}
+h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:800}
+h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700}
+h3{font-size:clamp(1.25rem,2.5vw,1.75rem);font-weight:700}
+h4{font-size:1.1rem;font-weight:600}
+p{color:var(--text2);line-height:1.75}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.container-sm{max-width:800px;margin:0 auto;padding:0 24px}
+section{padding:100px 0}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--p3);margin-bottom:20px}
+.section-label::before{content:'';width:20px;height:2px;background:var(--grad)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;transition:var(--trans);border:none;outline:none}
+.btn-primary{background:var(--grad2);color:#fff;box-shadow:0 0 0 rgba(108,59,255,0);position:relative}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(108,59,255,0.45)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-secondary:hover{border-color:rgba(108,59,255,0.5);background:rgba(108,59,255,0.08);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--p3);padding:12px 0;font-size:.9rem}
+.btn-ghost:hover{color:var(--text)}
+.btn svg{width:16px;height:16px;transition:transform .3s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-sm{padding:10px 20px;font-size:.85rem}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:var(--trans)}
+#nav.scrolled{background:rgba(8,8,16,0.92);backdrop-filter:blur(20px);padding:14px 0;border-bottom:1px solid var(--border2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.03em}
+.nav-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text2);padding:8px 14px;border-radius:8px;transition:var(--trans)}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.nav-links a.active{color:var(--text)}
+.nav-cta{margin-left:8px}
+.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-mobile-toggle span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:var(--trans)}
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(8,8,16,0.98);backdrop-filter:blur(20px);padding:16px 24px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border2)}
+  .nav-links.open{display:flex}
+  .nav-mobile-toggle{display:flex}
+  .nav-cta{display:none}
+}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block}
+
+/* ── HERO ── */
+.hero{padding:160px 0 100px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse, rgba(108,59,255,0.18) 0%, rgba(108,59,255,0.04) 50%, transparent 70%);pointer-events:none;z-index:0}
+.hero-content{position:relative;z-index:1;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:600;color:var(--p3);margin-bottom:28px}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--p3);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{margin-bottom:24px}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text2);max-width:520px;margin:0 auto 40px;line-height:1.7}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.trust-strip{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--text3);font-weight:500}
+.trust-item::before{content:'';width:5px;height:5px;background:var(--p2);border-radius:50%}
+
+/* ── SERVICES PREVIEW ── */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:60px}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.service-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:40px;position:relative;overflow:hidden;transition:var(--trans);cursor:default}
+.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left, rgba(108,59,255,0.08) 0%, transparent 60%);pointer-events:none}
+.service-card:hover{border-color:rgba(108,59,255,0.3);transform:translateY(-4px);box-shadow:var(--glow-sm)}
+.service-card .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:20px}
+.tag-primary{background:rgba(108,59,255,0.15);color:var(--p3)}
+.tag-secondary{background:rgba(192,132,252,0.1);color:var(--p3)}
+.service-card h3{margin-bottom:14px;font-size:1.5rem}
+.service-card p{font-size:.95rem;margin-bottom:24px}
+.service-features{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.service-feature{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--text2)}
+.service-feature::before{content:'';flex-shrink:0;width:16px;height:16px;background:var(--grad);border-radius:50%;display:grid;place-items:center}
+.service-feature svg{color:var(--p3)}
+
+/* ── SECTION TITLE ── */
+.section-title{margin-bottom:60px}
+.section-title h2{margin-bottom:14px}
+.section-title p{max-width:540px;font-size:1.05rem}
+.section-title.center{text-align:center}
+.section-title.center p{margin:0 auto}
+
+/* ── WORK CARDS ── */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:1024px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.work-grid{grid-template-columns:1fr}}
+.work-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:var(--trans)}
+.work-card:hover{transform:translateY(-6px);box-shadow:var(--glow-sm);border-color:rgba(108,59,255,0.25)}
+.work-card-img{height:220px;background:var(--surface2);position:relative;overflow:hidden}
+.work-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.work-card:hover .work-card-img img{transform:scale(1.06)}
+.work-card-img .img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,16,0) 35%,rgba(8,8,16,0.75) 100%)}
+.work-card-img .proj-label{position:absolute;bottom:14px;left:16px;font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.02em;text-shadow:0 2px 8px rgba(0,0,0,0.7)}
+.work-card-img .mock{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-.02em;background:var(--grad2);opacity:.85}
+.work-card-body{padding:24px}
+.work-tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p3);margin-bottom:8px}
+.work-card-body h4{margin-bottom:8px;font-size:1.05rem}
+.work-card-body p{font-size:.88rem;margin-bottom:18px}
+.work-metrics{display:flex;gap:16px;padding-top:16px;border-top:1px solid var(--border2)}
+.metric span{display:block;font-size:1.1rem;font-weight:700;font-family:'Syne',sans-serif;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.metric small{font-size:.75rem;color:var(--text3)}
+
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px}
+@media(max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.process-steps{grid-template-columns:1fr}}
+.process-step{padding:32px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);position:relative}
+.process-step .num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:16px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.4}
+.process-step h4{margin-bottom:8px}
+.process-step p{font-size:.88rem}
+
+/* ── WHY US ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+.why-item{display:flex;align-items:flex-start;gap:14px;padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)}
+.why-icon{flex-shrink:0;width:36px;height:36px;background:rgba(108,59,255,0.15);border-radius:8px;display:grid;place-items:center;color:var(--p3)}
+.why-icon svg{width:18px;height:18px}
+.why-item h4{margin-bottom:4px}
+.why-item p{font-size:.85rem}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.testi-grid{grid-template-columns:1fr}}
+.testi-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:28px;transition:var(--trans)}
+.testi-card:hover{border-color:rgba(108,59,255,0.2)}
+.testi-stars{display:flex;gap:3px;margin-bottom:16px}
+.star{color:var(--p3);font-size:1rem}
+.testi-text{font-size:.92rem;color:var(--text2);margin-bottom:20px;font-style:italic;line-height:1.7}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--grad2);display:grid;place-items:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0}
+.testi-name{font-weight:600;font-size:.9rem}
+.testi-role{font-size:.78rem;color:var(--text3)}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border:1px solid var(--border2);border-radius:var(--r-sm);overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;font-weight:600;font-size:.95rem;gap:16px;transition:var(--trans)}
+.faq-q:hover{background:rgba(255,255,255,0.02)}
+.faq-q .icon{flex-shrink:0;width:24px;height:24px;background:rgba(108,59,255,0.15);border-radius:6px;display:grid;place-items:center;color:var(--p3);transition:transform .3s}
+.faq-item.open .faq-q .icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 24px 20px;color:var(--text2);font-size:.92rem;line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* ── FINAL CTA ── */
+.cta-block{background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse, rgba(108,59,255,0.15) 0%, transparent 65%);pointer-events:none}
+.cta-block h2{margin-bottom:16px;position:relative}
+.cta-block p{margin-bottom:36px;font-size:1.05rem;max-width:480px;margin-left:auto;margin-right:auto;position:relative}
+.cta-block .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ── SERVICES PAGE ── */
+.service-detail{margin-bottom:80px}
+.service-detail-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:48px}
+@media(max-width:768px){.service-detail-header{grid-template-columns:1fr}}
+.deliverables-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:560px){.deliverables-grid{grid-template-columns:1fr}}
+.deliverable{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm);font-size:.88rem;font-weight:500}
+.deliverable::before{content:'✓';color:var(--p3);font-weight:700;font-size:1rem}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
+.pricing-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:40px;position:relative;transition:var(--trans)}
+.pricing-card.featured{border-color:rgba(108,59,255,0.4);background:var(--surface2);box-shadow:var(--glow-sm)}
+.pricing-card.featured::before{content:'Most Popular';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad2);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 16px;border-radius:100px}
+.pricing-price{margin:20px 0;font-family:'Syne',sans-serif}
+.pricing-price .from{font-size:.8rem;color:var(--text3);display:block;margin-bottom:4px}
+.pricing-price .amount{font-size:2.6rem;font-weight:800}
+.pricing-price .amount span{font-size:.9rem;font-weight:400;color:var(--text3)}
+.pricing-includes{display:flex;flex-direction:column;gap:10px;margin:24px 0 32px}
+.pi{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text2)}
+.pi::before{content:'✓';color:var(--p3);font-weight:700;flex-shrink:0;line-height:1.6}
+.pricing-divider{height:1px;background:var(--border2);margin:80px 0}
+.what-affects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:640px){.what-affects{grid-template-columns:1fr}}
+.affect-item{padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)}
+.affect-item h4{margin-bottom:8px;font-size:1rem}
+.affect-item p{font-size:.85rem}
+
+/* ── WORK / PORTFOLIO ── */
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filter-tab{padding:8px 20px;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid var(--border2);color:var(--text2);background:transparent;transition:var(--trans);font-family:'DM Sans',sans-serif}
+.filter-tab.active,.filter-tab:hover{background:rgba(108,59,255,0.1);border-color:rgba(108,59,255,0.35);color:var(--text)}
+
+/* ── CONTACT ── */
+.contact-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
+@media(max-width:900px){.contact-layout{grid-template-columns:1fr}}
+.contact-info{position:sticky;top:120px}
+.contact-info h2{margin-bottom:16px}
+.contact-info p{margin-bottom:36px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px}
+.contact-detail-icon{width:40px;height:40px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.2);border-radius:10px;display:grid;place-items:center;color:var(--p3);flex-shrink:0}
+.contact-detail-icon svg{width:18px;height:18px}
+.contact-detail-text strong{display:block;font-size:.9rem;margin-bottom:2px}
+.contact-detail-text span{font-size:.85rem;color:var(--text2)}
+.contact-form{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:40px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.form-group label{font-size:.85rem;font-weight:600;color:var(--text)}
+.form-group input,.form-group select,.form-group textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:12px 16px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.92rem;transition:var(--trans);outline:none;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(108,59,255,0.5);box-shadow:0 0 0 3px rgba(108,59,255,0.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-group select{appearance:none;cursor:pointer}
+.hp-field{position:absolute;left:-9999px;visibility:hidden}
+.form-success{display:none;text-align:center;padding:40px}
+.form-success.show{display:block}
+.form-success-icon{width:60px;height:60px;background:var(--grad2);border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;font-size:1.5rem}
+.form-success h3{margin-bottom:8px}
+
+/* ── BOOK A CALL ── */
+.book-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+@media(max-width:900px){.book-layout{grid-template-columns:1fr}}
+.cal-placeholder{background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);padding:60px 40px;text-align:center;min-height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.cal-icon{font-size:2.5rem;margin-bottom:8px}
+.cal-placeholder h3{margin-bottom:8px}
+.cal-placeholder p{font-size:.9rem;max-width:320px}
+.expect-list{display:flex;flex-direction:column;gap:16px}
+.expect-item{display:flex;align-items:flex-start;gap:14px}
+.expect-num{flex-shrink:0;width:32px;height:32px;background:rgba(108,59,255,0.12);border:1px solid rgba(108,59,255,0.25);border-radius:8px;display:grid;place-items:center;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--p3)}
+.expect-item h4{font-size:.95rem;margin-bottom:3px}
+.expect-item p{font-size:.85rem}
+
+/* ── ABOUT ── */
+.about-hero{padding:160px 0 80px;text-align:center}
+.about-hero h1{margin-bottom:20px}
+.about-hero p{font-size:1.1rem;max-width:560px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.values-list{display:flex;flex-direction:column;gap:14px}
+.value-item{padding:20px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)}
+.value-item h4{margin-bottom:4px;font-size:1rem}
+.value-item p{font-size:.85rem}
+
+/* ── BLOG ── */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:var(--trans);cursor:pointer}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(108,59,255,0.25)}
+.blog-card-img{height:200px;background:var(--surface2);overflow:hidden;position:relative}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.blog-card:hover .blog-card-img img{transform:scale(1.05)}
+.blog-card-body{padding:24px}
+.blog-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:.78rem;color:var(--text3)}
+.blog-cat{color:var(--p3);font-weight:600}
+.blog-card-body h3{font-size:1.1rem;margin-bottom:8px}
+.blog-card-body p{font-size:.87rem}
+
+/* ── PRIVACY / TERMS ── */
+.legal-content h2{margin:36px 0 12px;font-size:1.4rem}
+.legal-content p{margin-bottom:14px;font-size:.93rem}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border2);padding:64px 0 32px}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand p{font-size:.88rem;margin-top:14px;margin-bottom:24px;max-width:260px}
+.footer-col h5{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:16px}
+.footer-col a{display:block;font-size:.88rem;color:var(--text3);padding:4px 0;transition:var(--trans)}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border2);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap:16px}
+.footer-bottom p{font-size:.8rem;color:var(--text3)}
+.footer-bottom .socials{display:flex;gap:12px}
+.social-link{width:34px;height:34px;background:var(--surface);border:1px solid var(--border2);border-radius:8px;display:grid;place-items:center;color:var(--text3);transition:var(--trans);font-size:.75rem}
+.social-link:hover{border-color:rgba(108,59,255,0.35);color:var(--p3)}
+
+/* ── DIVIDER ── */
+.section-divider{height:1px;background:var(--border2);margin:0}
+
+/* ── ANIMATIONS ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ── SCROLL INDICATOR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(108,59,255,0.4);border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="#" onclick="showPage('home')"><span>Orvexa</span> Labs</a>
+<div class="nav-links" id="navLinks">
+<a href="#" onclick="showPage('services')">Services</a>
+<a href="#" onclick="showPage('work')">Work</a>
+<a href="#" onclick="showPage('pricing')">Pricing</a>
+<a href="#" onclick="showPage('about')">About</a>
+<a href="#" onclick="showPage('blog')">Blog</a>
+<a href="#" onclick="showPage('contact')">Contact</a>
+<a href="#" onclick="showPage('book')" class="btn btn-primary btn-sm nav-cta">Book a Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+<div class="nav-mobile-toggle" id="mobileToggle" onclick="toggleNav()">
+<span></span><span></span><span></span>
+</div>
+</div>
+</div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-glow"></div>
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">✦ Web Design & AI Solutions</div>
+<h1>Websites that look<br><span class="grad-text">premium</span> and actually<br>convert.</h1>
+<p class="hero-sub">We build web experiences that earn trust on first click and turn visitors into paying customers.</p>
+<div class="hero-ctas">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Discovery Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('work')" class="btn btn-secondary">View Our Work</a>
+</div>
+<div class="trust-strip">
+<div class="trust-item">Mobile-first</div>
+<div class="trust-item">Fast-loading</div>
+<div class="trust-item">SEO-ready</div>
+<div class="trust-item">Conversion-focused</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section style="padding-top:40px">
+<div class="container">
+<div class="section-title">
+<div class="section-label">What We Do</div>
+<h2>Two things, done exceptionally well.</h2>
+<p>We keep our focus narrow so the quality stays high. No bloated service lists.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="tag tag-primary">Core Service</div>
+<h3>Web Design &amp; Development</h3>
+<p>From landing pages to full business websites — designed to convert, built to perform, and made to scale with your growth.</p>
+<div class="service-features">
+<div class="service-feature">UI/UX Design &amp; Brand-aligned aesthetics</div>
+<div class="service-feature">Custom website development</div>
+<div class="service-feature">Landing pages that drive action</div>
+<div class="service-feature">Performance &amp; SEO foundation</div>
+</div>
+<a href="#" onclick="showPage('services')" class="btn btn-primary">Explore Service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+<div class="service-card">
+<div class="tag tag-secondary">Add-on Service</div>
+<h3>AI Call Assistants</h3>
+<p>Never miss a lead again. Our AI voice assistants handle calls after hours — answering questions, capturing details, and booking appointments automatically.</p>
+<div class="service-features">
+<div class="service-feature">Handles calls when you're unavailable</div>
+<div class="service-feature">Answers FAQs naturally</div>
+<div class="service-feature">Captures lead details automatically</div>
+<div class="service-feature">Books appointments &amp; sends summaries</div>
+</div>
+<a href="#" onclick="showPage('services')" class="btn btn-secondary">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURED WORK -->
+<section>
+<div class="container">
+<div class="section-title">
+<div class="section-label">Featured Work</div>
+<h2>Results that speak louder than decks.</h2>
+<p>A sample of recent projects and the outcomes they delivered.</p>
+</div>
+<div class="work-grid">
+<div class="work-card fade-in">
+<div class="work-card-img">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Nexus Analytics dashboard"/>
+<div class="img-overlay"></div><div class="proj-label">NEXUS</div>
+</div>
+<div class="work-card-body">
+<div class="work-tag">SaaS / Landing Page</div>
+<h4>Nexus Analytics — Lead Gen Overhaul</h4>
+<p>Redesigned the entire marketing site and landing flow to reduce bounce and push qualified demos.</p>
+<div class="work-metrics">
+<div class="metric"><span>+142%</span><small>Demo signups</small></div>
+<div class="metric"><span>-38%</span><small>Bounce rate</small></div>
+<div class="metric"><span>2.1s</span><small>Load time</small></div>
+</div>
+</div>
+</div>
+<div class="work-card fade-in">
+<div class="work-card-img">
+<img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80" alt="Flora Botanicals ecommerce store"/>
+<div class="img-overlay"></div><div class="proj-label">FLORA</div>
+</div>
+<div class="work-card-body">
+<div class="work-tag">Ecommerce</div>
+<h4>Flora Botanicals — Full Store Build</h4>
+<p>End-to-end ecommerce build with custom product pages, optimised checkout flow, and brand identity.</p>
+<div class="work-metrics">
+<div class="metric"><span>+89%</span><small>Conversion rate</small></div>
+<div class="metric"><span>£34k</span><small>Rev in month 1</small></div>
+<div class="metric"><span>4.8★</span><small>UX score</small></div>
+</div>
+</div>
+</div>
+<div class="work-card fade-in">
+<div class="work-card-img">
+<img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=700&q=80" alt="Vance Legal professional website"/>
+<div class="img-overlay"></div><div class="proj-label">VANCE</div>
+</div>
+<div class="work-card-body">
+<div class="work-tag">Professional Services</div>
+<h4>Vance Legal — Brand + Web Presence</h4>
+<p>Brand positioning and website for a boutique law firm needing to compete with larger players.</p>
+<div class="work-metrics">
+<div class="metric"><span>3×</span><small>Inbound enquiries</small></div>
+<div class="metric"><span>#1</span><small>Local SEO rank</small></div>
+<div class="metric"><span>98</span><small>Lighthouse score</small></div>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-top:40px;text-align:center">
+<a href="#" onclick="showPage('work')" class="btn btn-secondary">View All Case Studies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title center">
+<div class="section-label">How It Works</div>
+<h2>Four steps from idea to live.</h2>
+<p>A transparent process with no surprises — just clear milestones and fast delivery.</p>
+</div>
+<div class="process-steps">
+<div class="process-step fade-in"><div class="num">01</div><h4>Discovery</h4><p>We dig into your goals, audience, and current gaps. 30-minute call, then a tailored proposal.</p></div>
+<div class="process-step fade-in"><div class="num">02</div><h4>Design</h4><p>Full wireframes and visual designs before we write a single line of code. You review and approve.</p></div>
+<div class="process-step fade-in"><div class="num">03</div><h4>Build</h4><p>Development with weekly check-ins. You can review live previews at every stage.</p></div>
+<div class="process-step fade-in"><div class="num">04</div><h4>Launch + Optimise</h4><p>We go live, monitor for 30 days, and fix any issues. You own everything outright.</p></div>
+</div>
+</div>
+</section>
+
+<!-- WHY ORVEXA -->
+<section>
+<div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+<div>
+<div class="section-label">Why Us</div>
+<h2>Built for businesses that care about quality.</h2>
+<p style="margin:16px 0 36px">We're not a template shop or a race-to-the-bottom agency. Every project gets our full attention — and the results show.</p>
+<a href="#" onclick="showPage('about')" class="btn btn-ghost">Meet the team →</a>
+</div>
+<div class="why-grid">
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Conversion-first design</h4><p style="font-size:.82rem">Every layout decision is made with your business goal in mind.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Fast, on-time delivery</h4><p style="font-size:.82rem">We set realistic timelines and meet them — no ghosting.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>You own everything</h4><p style="font-size:.82rem">Full code + asset ownership. No lock-in, ever.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h4>Clear communication</h4><p style="font-size:.82rem">You'll always know where your project is and what's next.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Performance obsessed</h4><p style="font-size:.82rem">Lighthouse 90+ scores as standard. Speed is non-negotiable.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h4>Scalable foundations</h4><p style="font-size:.82rem">Built to grow with your business, not just for today.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title center">
+<div class="section-label">Testimonials</div>
+<h2>What clients actually say.</h2>
+</div>
+<div class="testi-grid">
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"The site went live in under three weeks and our enquiry rate doubled in the first month. Exactly what we needed, with zero hassle."</p><div class="testi-author"><div class="testi-avatar">JM</div><div><div class="testi-name">James M.</div><div class="testi-role">Founder, Nexus Analytics</div></div></div></div>
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"They didn't just build a website — they built something that actually works as a business tool. Revenue in month one exceeded what we made in our previous quarter."</p><div class="testi-author"><div class="testi-avatar">SE</div><div><div class="testi-name">Sofia E.</div><div class="testi-role">Co-founder, Flora Botanicals</div></div></div></div>
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"I was sceptical about the AI call assistant but it paid for itself in the first two weeks — no more missed leads after hours."</p><div class="testi-author"><div class="testi-avatar">RV</div><div><div class="testi-name">R. Vance</div><div class="testi-role">Managing Partner, Vance Legal</div></div></div></div>
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"Honestly impressed by the quality. Feels like we hired a team 5× the price. Clean, fast, and converts like crazy."</p><div class="testi-author"><div class="testi-avatar">AL</div><div><div class="testi-name">Aisha L.</div><div class="testi-role">Marketing Director, Elevate Agency</div></div></div></div>
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"Communication was excellent throughout. They pushed back when they had better ideas, and they were right every time."</p><div class="testi-author"><div class="testi-avatar">TC</div><div><div class="testi-name">Tom C.</div><div class="testi-role">CEO, ClearPath Finance</div></div></div></div>
+<div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"We've worked with three agencies before. Orvexa is the first one that delivered exactly what they promised — on budget and ahead of schedule."</p><div class="testi-author"><div class="testi-avatar">PH</div><div><div class="testi-name">Priya H.</div><div class="testi-role">Operations Lead, NorthStar Logistics</div></div></div></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section>
+<div class="container">
+<div class="section-title">
+<div class="section-label">FAQ</div>
+<h2>Common questions.</h2>
+</div>
+<div class="container-sm" style="padding:0">
+<div class="faq-list">
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does a typical website project take?<span class="icon">+</span></div><div class="faq-a">Landing pages typically take 7–10 business days. Multi-page business sites take 3–5 weeks. Ecommerce and custom builds vary from 5–10 weeks depending on complexity. We'll give you an accurate timeline in the proposal.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I own the website and code after launch?<span class="icon">+</span></div><div class="faq-a">Yes, 100%. Once the project is paid in full, all code, design files, and assets transfer to you. No lock-in, no ongoing fees unless you choose a maintenance retainer.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many revisions are included?<span class="icon">+</span></div><div class="faq-a">Every project includes two rounds of revisions at the design stage and one round post-development. Additional revisions are available at a flat hourly rate.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the payment structure?<span class="icon">+</span></div><div class="faq-a">We typically work on a 50/50 split — 50% upfront to begin, 50% on delivery. For larger projects, a three-stage milestone structure is available.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What platforms do you build on?<span class="icon">+</span></div><div class="faq-a">We build on platforms best suited to the project: custom code (HTML/CSS/JS), WordPress, Webflow, Shopify, or Next.js for advanced builds. We'll recommend the right one during the discovery call.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the AI Call Assistant — and how does it work?<span class="icon">+</span></div><div class="faq-a">The AI Call Assistant is a voice-based assistant that answers calls on your behalf when you're unavailable. It can answer common questions about your business, collect caller details, and book appointments. Setup takes 1–2 days and no technical knowledge is required on your end.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer ongoing support after launch?<span class="icon">+</span></div><div class="faq-a">Yes. We offer optional monthly maintenance retainers that cover updates, performance monitoring, and content changes. Details are in the proposal stage.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get SEO included?<span class="icon">+</span></div><div class="faq-a">All projects include technical SEO foundations: clean markup, meta tags, sitemap, and page speed optimisation. Ongoing SEO campaigns are available as a separate add-on service.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding-bottom:120px">
+<div class="container">
+<div class="cta-block">
+<div class="section-label" style="justify-content:center;margin-bottom:20px">Let's Work Together</div>
+<h2>Ready to build something<br><span class="grad-text">worth showing off?</span></h2>
+<p>Book a free 30-minute discovery call. No pressure, no pitch — just an honest conversation about what you need.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('contact')" class="btn btn-secondary">Send a Message</a>
+</div>
+</div>
+</div>
+</section>
+
+</div><!-- /page-home -->
+
+<!-- ===== SERVICES PAGE ===== -->
+<div class="page" id="page-services">
+<div style="padding:140px 0 0">
+<div class="container">
+<div class="section-label">Services</div>
+<h1 style="margin-bottom:16px">What we <span class="grad-text">build</span>.</h1>
+<p style="font-size:1.1rem;max-width:520px;margin-bottom:80px">Two focused services. No filler. Everything we do is designed to make your business more visible, more credible, and more profitable.</p>
+
+<!-- Service 1 -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">01 — Core Service</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">Web Design &amp; Development</h2>
+<p style="margin-bottom:20px">We design and build websites that balance premium aesthetics with hard conversion mechanics. Every pixel is intentional. Every page has a job to do.</p>
+<p>Whether you need a single landing page or a full multi-page site, we approach every project with the same rigour: clear goals, thoughtful design, clean code.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What's included</h4>
+<div class="deliverables-grid">
+<div class="deliverable">UI/UX Design</div>
+<div class="deliverable">Full development</div>
+<div class="deliverable">Mobile-responsive</div>
+<div class="deliverable">SEO foundations</div>
+<div class="deliverable">Performance tuning</div>
+<div class="deliverable">Analytics setup</div>
+<div class="deliverable">2 design revisions</div>
+<div class="deliverable">Full ownership</div>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px">
+<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Landing Pages</h4><p style="font-size:.85rem">High-converting single-page sites for campaigns, products, or lead generation.</p></div>
+<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Business Websites</h4><p style="font-size:.85rem">Multi-page sites built to establish credibility and generate qualified enquiries.</p></div>
+<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Redesigns</h4><p style="font-size:.85rem">Lift your existing site out of 2018 and into a design that matches your ambitions.</p></div>
+</div>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Web Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+<div class="section-divider" style="margin:60px 0"></div>
+
+<!-- Service 2 -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">02 — Add-on Service</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">AI Call Assistants</h2>
+<p style="margin-bottom:20px">Your business doesn't stop taking calls at 5pm — but you do. Our AI call assistants handle inbound calls outside business hours so you never miss a lead.</p>
+<p>No robotic scripts. No awkward silences. A professional, natural voice that represents your brand and captures what matters.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What it does</h4>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📞</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Answers calls after hours</strong><p style="font-size:.82rem">Picks up when you can't, 24/7 if needed.</p></div></div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">💬</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Handles common FAQs</strong><p style="font-size:.82rem">Trained on your business info — hours, pricing, services, location.</p></div></div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📋</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Captures lead details</strong><p style="font-size:.82rem">Name, number, reason for call — delivered to your inbox.</p></div></div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📅</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Books appointments</strong><p style="font-size:.82rem">Can schedule directly into your calendar system.</p></div></div>
+</div>
+</div>
+</div>
+<div style="background:rgba(108,59,255,0.06);border:1px solid rgba(108,59,255,0.15);border-radius:var(--r);padding:28px;margin-bottom:32px">
+<h4 style="margin-bottom:12px">Is it right for your business?</h4>
+<p style="font-size:.9rem">AI Call Assistants work best for service businesses, trades, clinics, law firms, agencies, and any business that regularly misses calls outside business hours. Setup takes 1–2 days. No technical expertise required.</p>
+</div>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Ask About AI Call Assistants <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+</div>
+</div>
+
+<!-- CTA -->
+<section style="padding-bottom:100px">
+<div class="container">
+<div class="cta-block">
+<h2>Not sure which service you need?</h2>
+<p>Book a free call and we'll give you an honest recommendation — even if that's something we don't offer.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('pricing')" class="btn btn-secondary">View Pricing</a>
+</div>
+</div>
+</div>
+</section>
+</div><!-- /page-services -->
+
+<!-- ===== WORK PAGE ===== -->
+<div class="page" id="page-work">
+<div style="padding:140px 0 0">
+<div class="container">
+<div class="section-label">Case Studies</div>
+<h1 style="margin-bottom:16px">Work that <span class="grad-text">performs</span>.</h1>
+<p style="font-size:1.1rem;max-width:520px;margin-bottom:48px">Every project here is a real business problem solved with design and development. Numbers are real.</p>
+<div class="filter-tabs">
+<button class="filter-tab active" onclick="filterWork(this,'all')">All</button>
+<button class="filter-tab" onclick="filterWork(this,'business')">Business</button>
+<button class="filter-tab" onclick="filterWork(this,'ecommerce')">Ecommerce</button>
+<button class="filter-tab" onclick="filterWork(this,'landing')">Landing Pages</button>
+<button class="filter-tab" onclick="filterWork(this,'brand')">Personal Brand</button>
+</div>
+<div class="work-grid" id="workGrid">
+<div class="work-card" data-cat="landing"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Nexus Analytics"/><div class="img-overlay"></div><div class="proj-label">NEXUS</div></div><div class="work-card-body"><div class="work-tag">SaaS / Landing Page</div><h4>Nexus Analytics</h4><p>Full marketing site + landing page redesign for a B2B analytics SaaS looking to increase demo signups.</p><div class="work-metrics"><div class="metric"><span>+142%</span><small>Demo signups</small></div><div class="metric"><span>-38%</span><small>Bounce rate</small></div><div class="metric"><span>2.1s</span><small>Load time</small></div></div></div></div>
+<div class="work-card" data-cat="ecommerce"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80" alt="Flora Botanicals"/><div class="img-overlay"></div><div class="proj-label">FLORA</div></div><div class="work-card-body"><div class="work-tag">Ecommerce</div><h4>Flora Botanicals</h4><p>End-to-end Shopify build with custom product pages and checkout optimisation for a UK wellness brand.</p><div class="work-metrics"><div class="metric"><span>+89%</span><small>Conversion</small></div><div class="metric"><span>£34k</span><small>Month 1 revenue</small></div><div class="metric"><span>4.8★</span><small>UX score</small></div></div></div></div>
+<div class="work-card" data-cat="business"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=700&q=80" alt="Vance Legal"/><div class="img-overlay"></div><div class="proj-label">VANCE</div></div><div class="work-card-body"><div class="work-tag">Professional Services</div><h4>Vance Legal</h4><p>Brand positioning and website for a boutique London law firm — designed to compete with much larger practices.</p><div class="work-metrics"><div class="metric"><span>3×</span><small>Inbound enquiries</small></div><div class="metric"><span>#1</span><small>Local SEO</small></div><div class="metric"><span>98</span><small>Lighthouse</small></div></div></div></div>
+<div class="work-card" data-cat="brand"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80" alt="Kairo Fitness Coach"/><div class="img-overlay"></div><div class="proj-label">KAIRO</div></div><div class="work-card-body"><div class="work-tag">Personal Brand</div><h4>Kairo — Fitness Coach</h4><p>Personal brand site and lead funnel for a premium fitness coach transitioning from referral-only to online.</p><div class="work-metrics"><div class="metric"><span>+210%</span><small>Online enquiries</small></div><div class="metric"><span>8 wks</span><small>To full client roster</small></div><div class="metric"><span>100%</span><small>Ownership</small></div></div></div></div>
+<div class="work-card" data-cat="landing"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=700&q=80" alt="Peak Recruitment"/><div class="img-overlay"></div><div class="proj-label">PEAK</div></div><div class="work-card-body"><div class="work-tag">Landing Page</div><h4>Peak Recruitment</h4><p>High-converting candidate and client landing pages for a specialist recruitment agency.</p><div class="work-metrics"><div class="metric"><span>+67%</span><small>CV submissions</small></div><div class="metric"><span>-44%</span><small>Cost per lead</small></div><div class="metric"><span>1.8s</span><small>Load time</small></div></div></div></div>
+<div class="work-card" data-cat="business"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" alt="Alyx Dental Practice"/><div class="img-overlay"></div><div class="proj-label">ALYX</div></div><div class="work-card-body"><div class="work-tag">Business / AI</div><h4>Alyx Dental Practice</h4><p>New website + AI Call Assistant integration. Patients can now book outside hours without human staff involvement.</p><div class="work-metrics"><div class="metric"><span>+52%</span><small>Bookings</small></div><div class="metric"><span>0</span><small>Missed calls</small></div><div class="metric"><span>£0</span><small>Extra staff cost</small></div></div></div></div>
+</div>
+</div>
+
+<section style="padding-top:80px;padding-bottom:100px">
+<div class="container">
+<div class="cta-block">
+<h2>Want results like these?</h2>
+<p>Most projects launch within 3–5 weeks. Let's talk about yours.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('contact')" class="btn btn-secondary">Get a Quote</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div><!-- /page-work -->
+
+<!-- ===== PRICING PAGE ===== -->
+<div class="page" id="page-pricing">
+<div style="padding:140px 0 0">
+<div class="container">
+<div class="section-title center">
+<div class="section-label" style="justify-content:center">Pricing</div>
+<h1 style="margin-bottom:16px">Transparent <span class="grad-text">pricing</span>.</h1>
+<p style="font-size:1.05rem;margin:0 auto;max-width:520px">No hidden fees, no awkward surprises. Every project starts with a scoping call so you know exactly what you're getting.</p>
+</div>
+
+<div class="pricing-grid" style="margin-top:60px">
+<div class="pricing-card">
+<div class="tag tag-primary">Starter</div>
+<h3>Landing Page<br>or Small Site</h3>
+<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£899<span> GBP</span></div></div>
+<p style="font-size:.88rem;margin-bottom:0">For new businesses, campaigns, or anyone who needs a sharp online presence fast.</p>
+<div class="pricing-includes">
+<div class="pi">1–3 page website or landing page</div>
+<div class="pi">Custom UI/UX design</div>
+<div class="pi">Mobile responsive</div>
+<div class="pi">Contact / lead form</div>
+<div class="pi">Basic SEO setup</div>
+<div class="pi">2 revision rounds</div>
+<div class="pi">Delivery: 7–14 days</div>
+</div>
+<a href="#" onclick="showPage('book')" class="btn btn-secondary" style="width:100%;justify-content:center">Get Started</a>
+</div>
+<div class="pricing-card featured">
+<div class="tag tag-primary">Growth</div>
+<h3>Multi-page<br>Business Site</h3>
+<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£2,500<span> GBP</span></div></div>
+<p style="font-size:.88rem;margin-bottom:0">For established businesses ready to treat their website as a growth channel.</p>
+<div class="pricing-includes">
+<div class="pi">5–10 page website</div>
+<div class="pi">Custom UI/UX design system</div>
+<div class="pi">Blog / CMS integration</div>
+<div class="pi">Full SEO foundations</div>
+<div class="pi">Analytics + tracking setup</div>
+<div class="pi">Performance optimisation</div>
+<div class="pi">3 revision rounds</div>
+<div class="pi">Delivery: 3–5 weeks</div>
+</div>
+<a href="#" onclick="showPage('book')" class="btn btn-primary" style="width:100%;justify-content:center">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+<div class="pricing-card">
+<div class="tag tag-secondary">Elite</div>
+<h3>Ecommerce or<br>Custom Build</h3>
+<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£3,500<span> GBP</span></div></div>
+<p style="font-size:.88rem;margin-bottom:0">For complex builds where performance, scale, and UX are all non-negotiable.</p>
+<div class="pricing-includes">
+<div class="pi">Ecommerce / custom web app</div>
+<div class="pi">Full design system</div>
+<div class="pi">Advanced integrations</div>
+<div class="pi">Checkout / funnel optimisation</div>
+<div class="pi">Custom CMS / admin</div>
+<div class="pi">Ongoing support option</div>
+<div class="pi">Dedicated project manager</div>
+<div class="pi">Timeline: scoped per project</div>
+</div>
+<a href="#" onclick="showPage('book')" class="btn btn-secondary" style="width:100%;justify-content:center">Get a Quote</a>
+</div>
+</div>
+
+<div class="pricing-divider"></div>
+
+<div class="section-title">
+<div class="section-label">Pricing Factors</div>
+<h2>What affects the final price?</h2>
+<p>Every project is different. Here's what moves the number up or down.</p>
+</div>
+<div class="what-affects" style="margin-top:40px">
+<div class="affect-item"><h4>Number of pages</h4><p>More pages means more design and development work. We scope every page individually.</p></div>
+<div class="affect-item"><h4>Custom functionality</h4><p>Booking systems, calculators, integrations, and custom user flows all add scope.</p></div>
+<div class="affect-item"><h4>Design complexity</h4><p>Heavily animated or illustration-heavy designs require more time than clean, minimal builds.</p></div>
+<div class="affect-item"><h4>Content readiness</h4><p>If you provide copy and images, we move faster. If you need copywriting, we can source it — for a fee.</p></div>
+<div class="affect-item"><h4>Timeline pressure</h4><p>Rush projects (under 2 weeks) carry a 20–30% urgency premium.</p></div>
+<div class="affect-item"><h4>Platform choice</h4><p>Custom code builds take longer than templated platforms, but offer more flexibility and no monthly fees.</p></div>
+</div>
+
+<div class="cta-block" style="margin-top:80px;margin-bottom:80px">
+<h2>Not sure which tier fits?</h2>
+<p>Tell us what you need on a 30-minute call. We'll give you an honest scoping, not a upsell.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- /page-pricing -->
+
+<!-- ===== ABOUT PAGE ===== -->
+<div class="page" id="page-about">
+<div class="about-hero">
+<div class="container">
+<div class="section-label" style="justify-content:center">About Orvexa Labs</div>
+<h1>Built to build <span class="grad-text">better</span>.</h1>
+<p>We started Orvexa Labs because too many businesses were stuck with websites that looked average and converted worse. We decided to fix that.</p>
+</div>
+</div>
+
+<section style="padding-top:20px">
+<div class="container">
+<div class="about-grid">
+<div>
+<div class="section-label">Our Story</div>
+<h2 style="margin-bottom:20px">Why we exist.</h2>
+<p style="margin-bottom:16px">Most web agencies sell templates dressed up as custom work, take six months to deliver, and disappear the moment you need changes. We built Orvexa as the antidote to that.</p>
+<p style="margin-bottom:16px">We're a lean, focused team of designers and developers who work on a small number of projects at a time. That means your project gets proper attention — not an overworked junior managing it between twelve other builds.</p>
+<p>We're based in the UK but work with clients globally. If your goals are serious, we're the right team.</p>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:40px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px">
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">40+</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Projects delivered</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">98%</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Client satisfaction</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">14d</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Avg. landing page delivery</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">UK</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Based, worldwide clients</div></div>
+</div>
+<p style="font-size:.88rem;text-align:center;color:var(--text3)">Real numbers. No fluff.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title center">
+<div class="section-label">Our Values</div>
+<h2>How we operate.</h2>
+</div>
+<div class="values-list" style="max-width:720px;margin:48px auto 0">
+<div class="value-item"><h4>Quality over quantity</h4><p>We take on fewer projects so we can focus more on each one. If we can't do it properly, we'll say so.</p></div>
+<div class="value-item"><h4>Honest communication</h4><p>We tell you what you need to hear, not what you want to hear. If something isn't working, we'll flag it early.</p></div>
+<div class="value-item"><h4>Outcomes, not outputs</h4><p>Shipping a website isn't the goal. Your business growing because of that website — that's the goal.</p></div>
+<div class="value-item"><h4>No lock-in</h4><p>You own everything we build. No retainer traps, no platform dependencies you didn't agree to.</p></div>
+</div>
+</div>
+</section>
+
+<section style="padding-bottom:100px">
+<div class="container">
+<div class="cta-block">
+<h2>Let's build something together.</h2>
+<p>A 30-minute call is all it takes to get started.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+</div><!-- /page-about -->
+
+<!-- ===== CONTACT PAGE ===== -->
+<div class="page" id="page-contact">
+<div style="padding:140px 0 100px">
+<div class="container">
+<div class="contact-layout">
+<div class="contact-info">
+<div class="section-label">Get in Touch</div>
+<h2 style="margin-bottom:16px">Let's talk<br>about your project.</h2>
+<p>Fill in the form and we'll get back to you within one business day.</p>
+<div style="margin-top:36px">
+<div class="contact-detail">
+<div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.1 19.36 19.36 0 0 1 1.64 3.5 2 2 0 0 1 3.62 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-1.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 15z"/></svg></div>
+<div class="contact-detail-text"><strong>Phone</strong><span>+44 7405 092285</span></div>
+</div>
+<div class="contact-detail">
+<div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+<div class="contact-detail-text"><strong>CEO email <span style="font-size:.75rem;color:var(--text3);font-weight:400">(temporary, while agency email is being set up)</span></strong><span><a href="mailto:ngooisaac@gmail.com" style="color:var(--text2)">ngooisaac@gmail.com</a></span></div>
+</div>
+<div class="contact-detail">
+<div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+<div class="contact-detail-text"><strong>Response time</strong><span>Within 1 business day</span></div>
+</div>
+</div>
+</div>
+
+<div class="contact-form" id="contactFormWrapper">
+<h3 style="margin-bottom:6px">Send a message</h3>
+<p style="font-size:.88rem;margin-bottom:28px">Short form. No nonsense. We'll read it properly.</p>
+<div class="hp-field"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"/></div>
+<div class="form-row">
+<div class="form-group"><label>Your name *</label><input type="text" id="cf-name" placeholder="Jane Smith"/></div>
+<div class="form-group"><label>Email address *</label><input type="email" id="cf-email" placeholder="jane@company.com"/></div>
+</div>
+<div class="form-group"><label>Business name</label><input type="text" id="cf-biz" placeholder="Acme Ltd."/></div>
+<div class="form-row">
+<div class="form-group"><label>Budget range</label><select id="cf-budget"><option value="">Select range</option><option>Under £1,000</option><option>£1,000 – £2,500</option><option>£2,500 – £5,000</option><option>£5,000 – £10,000</option><option>£10,000+</option></select></div>
+<div class="form-group"><label>Timeline</label><select id="cf-timeline"><option value="">How soon?</option><option>ASAP (under 2 weeks)</option><option>1 month</option><option>1–3 months</option><option>No rush — planning ahead</option></select></div>
+</div>
+<div class="form-group"><label>Tell us about the project *</label><textarea id="cf-msg" placeholder="What are you building? What's the goal? Any context helps."></textarea></div>
+<button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm()">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+</div>
+<div class="form-success" id="formSuccess">
+<div class="form-success-icon">✓</div>
+<h3>Message received.</h3>
+<p>We'll be in touch within one business day. If it's urgent, call us on +44 7405 092285.</p>
+<a href="#" onclick="showPage('home')" class="btn btn-primary" style="margin-top:20px">Back to Home</a>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /page-contact -->
+
+<!-- ===== BOOK A CALL PAGE ===== -->
+<div class="page" id="page-book">
+<div style="padding:140px 0 100px">
+<div class="container">
+<div class="section-label">Book a Call</div>
+<h1 style="margin-bottom:16px">Free 30-minute<br><span class="grad-text">Discovery Call</span>.</h1>
+<p style="font-size:1.1rem;max-width:520px;margin-bottom:60px">No pitch. No hard sell. Just a straight conversation about your goals and whether we're the right fit.</p>
+<div class="book-layout">
+<div>
+<h3 style="margin-bottom:8px">What to expect</h3>
+<p style="margin-bottom:32px;font-size:.9rem">A focused, 30-minute conversation — not a discovery marathon.</p>
+<div class="expect-list">
+<div class="expect-item"><div class="expect-num">01</div><div><h4>Understand your goals</h4><p>We'll ask about your business, what you're trying to achieve, and what's blocking you right now.</p></div></div>
+<div class="expect-item"><div class="expect-num">02</div><div><h4>Review your current situation</h4><p>If you have an existing site or brand, we'll give you an honest quick-take. No charge, no strings.</p></div></div>
+<div class="expect-item"><div class="expect-num">03</div><div><h4>Outline an approach</h4><p>We'll sketch out what a project might look like — timeline, rough budget range, platform suggestions.</p></div></div>
+<div class="expect-item"><div class="expect-num">04</div><div><h4>Decide together</h4><p>If it's a fit, we'll send a detailed proposal within 48 hours. If not, we'll point you in the right direction anyway.</p></div></div>
+</div>
+<div style="margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)">
+<p style="font-size:.85rem;margin-bottom:12px;color:var(--text)"><strong>Prefer to message first?</strong></p>
+<a href="#" onclick="showPage('contact')" class="btn btn-secondary btn-sm">Send us a message instead</a>
+</div>
+</div>
+<div>
+<div style="background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);overflow:hidden;min-height:660px">
+<iframe
+  src="https://cal.com/isaacngoo/freediscoverycall?embed=true&theme=dark&primaryColor=6C3BFF"
+  width="100%"
+  height="660"
+  frameborder="0"
+  style="display:block;border:none"
+  title="Book a Free Discovery Call with Orvexa Labs"
+  loading="lazy"
+></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /page-book -->
+
+<!-- ===== BLOG PAGE ===== -->
+<div class="page" id="page-blog">
+<div style="padding:140px 0 0">
+<div class="container">
+<div class="section-label">Insights</div>
+<h1 style="margin-bottom:16px">Thinking on <span class="grad-text">design & growth</span>.</h1>
+<p style="font-size:1.05rem;max-width:520px;margin-bottom:60px">Practical articles on web design, conversion, and building online presence that actually works.</p>
+<div class="blog-grid">
+<div class="blog-card" onclick="showPage('blog-post-1')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Web conversion analytics"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Web Design</span><span>·</span><span>5 min read</span></div><h3>Why 90% of business websites don't convert — and what to do about it</h3><p>Most sites look fine but fail at the one job they're supposed to do: turn visitors into customers. Here's why.</p></div></div>
+
+<div class="blog-card" onclick="showPage('blog-post-2')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80" alt="Page speed performance"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Performance</span><span>·</span><span>4 min read</span></div><h3>Page speed isn't optional: the revenue impact of slow websites</h3><p>A 1-second delay in load time can cost you 7% in conversions. Here's how to fix the most common culprits.</p></div></div>
+
+<div class="blog-card" onclick="showPage('blog-post-3')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80" alt="AI call assistant technology"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>6 min read</span></div><h3>AI call assistants explained: what they can (and can't) do for your business</h3><p>Cutting through the hype with an honest breakdown of what AI call assistants actually handle well.</p></div></div>
+
+<div class="blog-card" onclick="showPage('blog-post-4')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80" alt="Landing page design layout"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Design</span><span>·</span><span>7 min read</span></div><h3>The anatomy of a high-converting landing page in 2025</h3><p>Every section has a job. Here's what to include, what to cut, and the order that converts best.</p></div></div>
+
+<div class="blog-card" onclick="showPage('blog-post-5')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&q=80" alt="SEO search engine optimization"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">SEO</span><span>·</span><span>5 min read</span></div><h3>Technical SEO foundations every small business site needs from day one</h3><p>You don't need an enterprise SEO budget. You need to get the basics right. Here's exactly what that means.</p></div></div>
+
+<div class="blog-card" onclick="showPage('blog-post-6')">
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=700&q=80" alt="Client strategy meeting briefing"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Strategy</span><span>·</span><span>4 min read</span></div><h3>How to brief a web design agency without wasting everyone's time</h3><p>A good brief is the difference between a smooth project and a painful one. Here's the template we wish clients used.</p></div></div>
+</div>
+</div>
+<section style="padding-bottom:100px">
+<div class="container">
+<div class="cta-block" style="margin-top:60px">
+<h2>Ready to get started?</h2>
+<p>Read enough? Let's talk about your project.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div><!-- /page-blog -->
+
+<!-- ===== BLOG POST 1 ===== -->
+<div class="page" id="page-blog-post-1">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Web Design</span><span>·</span><span>5 min read</span><span>·</span><span style="color:var(--text3)">Jan 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Why 90% of business websites don't convert — and what to do about it</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Web analytics conversion" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>Most business websites share the same problem: they look like websites, but they don't work like sales tools. They have a homepage, an about page, a services page, and a contact page — but nothing on any of those pages is designed to make a visitor take action.</p>
+<h2>The fundamental mistake</h2>
+<p>The biggest issue is that most websites are designed around the business's structure, not the customer's journey. You start with "About Us" because that's how companies think about themselves. But your visitor doesn't care about your history — they care about whether you can solve their problem.</p>
+<p>A conversion-focused website starts with the visitor's question: <em>Can this company help me, and why should I trust them?</em> Every page should answer that question faster and more convincingly than the last.</p>
+<h2>What actually drives conversions</h2>
+<p>Specificity. Vague copy like "we help businesses grow" converts worse than specific, measurable promises. One is a promise. The other is a platitude.</p>
+<p>Social proof positioned at decision points. A testimonial buried in the footer helps no one. Place it right before the CTA where doubt is highest.</p>
+<p>One clear call to action per page. Not five options. Not a cluttered nav with twelve destinations. One next step, clearly signposted.</p>
+<h2>The fix</h2>
+<p>Audit your current site with this question for every page: <em>What do I want the visitor to do after reading this?</em> If the answer isn't immediately obvious from the page design, that's your problem — and your starting point.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">Want a site that actually converts?</h3>
+<p style="margin-bottom:24px">That's exactly what we build. Book a free call to talk through your project.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== BLOG POST 2 ===== -->
+<div class="page" id="page-blog-post-2">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Performance</span><span>·</span><span>4 min read</span><span>·</span><span style="color:var(--text3)">Feb 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Page speed isn't optional: the revenue impact of slow websites</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=80" alt="Website speed performance" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>Every second your website takes to load is costing you money. Google's own research shows a 1-second delay in mobile page load can reduce conversions by up to 20%. For most businesses, that's thousands of pounds left on the table every month.</p>
+<h2>Why speed matters more than ever</h2>
+<p>Users are less patient than they've ever been. The average person will abandon a page that takes more than 3 seconds to load. On mobile, it's even less forgiving. Google also uses page speed as a direct ranking signal — slow sites don't just lose customers, they lose visibility.</p>
+<h2>The most common culprits</h2>
+<p>Uncompressed images are the single biggest offender on most business websites. A hero image uploaded straight from a camera can be 4–8MB when it should be under 200KB. Next are unminified CSS and JavaScript files, too many third-party scripts (live chat, analytics, ad trackers), and no caching configured on the server.</p>
+<h2>What a fast site looks like</h2>
+<p>A well-optimised site should score 90+ on Google Lighthouse and load the first meaningful content within 1.5 seconds. This is achievable without exotic infrastructure — it just requires disciplined development practices from the start, not bolted on later.</p>
+<h2>The fix</h2>
+<p>Start with images — compress everything and use modern formats like WebP. Then audit your third-party scripts and remove anything non-essential. If you're on WordPress, a good caching plugin alone can cut load times by 40%. For anything beyond that, you likely need a developer to look at the actual build.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">Want a fast, high-scoring website?</h3>
+<p style="margin-bottom:24px">We build to Lighthouse 90+ as standard. Let's talk.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== BLOG POST 3 ===== -->
+<div class="page" id="page-blog-post-3">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>6 min read</span><span>·</span><span style="color:var(--text3)">Mar 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">AI call assistants explained: what they can (and can't) do for your business</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&q=80" alt="AI voice technology" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>AI call assistants have gone from a novelty to a genuine business tool in the space of two years. But there's still a lot of noise around what they actually do well — and where they fall short. This is an honest breakdown, not a sales pitch.</p>
+<h2>What AI call assistants genuinely do well</h2>
+<p>Handling calls when you're unavailable is the obvious one, but the value goes deeper. An AI assistant can answer the same FAQ a hundred times without getting tired or inconsistent. It can capture a caller's name, number, and reason for calling and deliver that as a neat summary to your inbox within seconds. For businesses that regularly miss calls outside of 9–5, this is a real revenue fix.</p>
+<p>Appointment booking is another strong use case. If you use a calendar tool like Cal.com or Calendly, an AI assistant can check availability and confirm a booking in real time, without any human involvement.</p>
+<h2>Where they're not the right fit</h2>
+<p>Complex, nuanced conversations are still better handled by humans. If a caller needs to discuss a sensitive complaint, negotiate pricing, or explain a complicated situation, an AI assistant will frustrate them rather than help. The technology is good at structured, predictable interactions — not emotional or high-stakes ones.</p>
+<h2>The bottom line</h2>
+<p>Think of an AI call assistant as a professional receptionist for your off-hours, not a replacement for your team. Used in the right context, it genuinely pays for itself in the first month through leads that would otherwise have gone to a competitor who picked up the phone.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">Interested in an AI Call Assistant?</h3>
+<p style="margin-bottom:24px">We set them up for businesses in 1–2 days. Let's talk about whether it's right for you.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== BLOG POST 4 ===== -->
+<div class="page" id="page-blog-post-4">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Design</span><span>·</span><span>7 min read</span><span>·</span><span style="color:var(--text3)">Apr 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">The anatomy of a high-converting landing page in 2025</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&q=80" alt="Landing page design" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>A landing page has one job: get the visitor to take a specific action. Everything on the page — every word, image, and button — should either push them toward that action or get out of the way. Here's the structure that consistently works.</p>
+<h2>1. Hero section</h2>
+<p>You have about 5 seconds to answer three questions: What is this? Who is it for? Why should I care? Your headline should be specific and outcome-focused. "We help businesses grow" is not a headline — it's a platitude. "We build websites that turn visitors into leads" is a headline.</p>
+<h2>2. Social proof — earlier than you think</h2>
+<p>Most designers put testimonials at the bottom. Most high-converting pages put them near the top. Trust needs to be established before the visitor is willing to read your pitch, not after.</p>
+<h2>3. The offer block</h2>
+<p>Be specific about what you're offering and what happens next. "Book a call" is fine. "Book a free 30-minute call — no pitch, just strategy" is better. Specificity reduces friction.</p>
+<h2>4. Objection handling</h2>
+<p>Every visitor has silent objections: Is this too expensive? Will they actually deliver? What if it doesn't work? Your FAQ section, testimonials, and guarantee copy should address these directly — before the visitor has to ask.</p>
+<h2>5. One CTA, repeated</h2>
+<p>Don't offer multiple different actions. Pick one and repeat it at the top, middle, and bottom of the page. Consistency builds conviction. Variety creates confusion.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">Need a landing page that actually converts?</h3>
+<p style="margin-bottom:24px">We specialise in exactly this. Let's talk about your project.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== BLOG POST 5 ===== -->
+<div class="page" id="page-blog-post-5">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">SEO</span><span>·</span><span>5 min read</span><span>·</span><span style="color:var(--text3)">May 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Technical SEO foundations every small business site needs from day one</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&q=80" alt="SEO search engine optimization" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>SEO doesn't have to be complicated. For most small businesses, the difference between ranking and not ranking comes down to a handful of technical basics — none of which require an agency retainer or specialist knowledge to implement.</p>
+<h2>Clean page titles and meta descriptions</h2>
+<p>Every page on your site should have a unique title tag (under 60 characters) and meta description (under 160 characters) that accurately describes what's on that page. This is the first thing Google reads and the first thing a potential customer sees in search results. Get this wrong and everything else is harder.</p>
+<h2>Proper heading structure</h2>
+<p>Each page should have exactly one H1 — your main headline. Subheadings should use H2 and H3 in a logical hierarchy. This tells search engines how your content is organised and makes it easier for them to understand what each section covers.</p>
+<h2>An XML sitemap</h2>
+<p>A sitemap tells Google which pages exist on your site and how they relate to each other. Most platforms generate this automatically — you just need to submit it to Google Search Console, which is free and takes ten minutes to set up.</p>
+<h2>Mobile responsiveness and HTTPS</h2>
+<p>Google ranks mobile-first. If your site doesn't work properly on a phone, you're being penalised. HTTPS (the padlock in the browser bar) is also a ranking signal and a trust signal — any site without it looks unprofessional in 2025.</p>
+<h2>Page speed</h2>
+<p>Already covered in a separate post, but worth repeating: speed is a direct Google ranking factor. Aim for a Lighthouse performance score above 85 as a baseline.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">We build with SEO foundations baked in</h3>
+<p style="margin-bottom:24px">Every Orvexa project ships with proper meta tags, sitemap, and performance optimisation. Let's talk.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== BLOG POST 6 ===== -->
+<div class="page" id="page-blog-post-6">
+<div style="padding:140px 0 100px"><div class="container-sm">
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Strategy</span><span>·</span><span>4 min read</span><span>·</span><span style="color:var(--text3)">Jun 2025</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">How to brief a web design agency without wasting everyone's time</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80" alt="Client strategy briefing meeting" style="width:100%;height:100%;object-fit:cover"/></div>
+<div class="legal-content" style="font-size:.97rem;line-height:1.85">
+<p>A bad brief leads to a bad project — or at minimum, a slower, more expensive one. Most of the friction that happens mid-project (scope creep, missed expectations, revision rounds) can be traced back to a brief that wasn't clear enough at the start. Here's how to get it right.</p>
+<h2>Start with the goal, not the design</h2>
+<p>The most common mistake in a brief is leading with "I want a clean, modern website" rather than "I want my website to generate 20 qualified enquiries per month." The first tells an agency what style you like. The second tells them what you actually need — and lets them design toward an outcome, not a preference.</p>
+<h2>Tell them who you're talking to</h2>
+<p>Your target customer is the most important thing an agency needs to understand. Their age, profession, what they care about, what makes them sceptical, what would make them click. The more specific you are, the better the output.</p>
+<h2>Share what you like — and what you don't</h2>
+<p>Send three or four website examples you admire and explain specifically what you like about each one. Do the same for sites you don't like. "I like the clean layout of this one but not the dark colour scheme" is infinitely more useful than "make it look premium."</p>
+<h2>Be upfront about budget and timeline</h2>
+<p>Agencies price work based on scope. If you're not transparent about your budget, you'll get a proposal that guesses — and it might be wildly off in either direction. A good agency will tell you honestly what's achievable within your range, not upsell you.</p>
+<h2>The one question every brief should answer</h2>
+<p>If a visitor lands on your homepage and does nothing else, what's the one thing you want them to do? If you can answer that clearly, you've already given an agency more than most clients do.</p>
+</div>
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
+<h3 style="margin-bottom:8px">We make the briefing process easy</h3>
+<p style="margin-bottom:24px">Our discovery call walks you through everything we need to know. No homework required.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div></div>
+</div>
+
+<!-- ===== PRIVACY PAGE ===== -->
+<div class="page" id="page-privacy">
+<div style="padding:140px 0 100px">
+<div class="container-sm">
+<div class="section-label">Legal</div>
+<h1 style="margin-bottom:8px">Privacy Policy</h1>
+<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: January 2025</p>
+<div class="legal-content">
+<p>This Privacy Policy describes how Orvexa Labs ("we", "us", or "our") collects, uses, and shares information about you when you use our website and services.</p>
+<h2>Information we collect</h2>
+<p>We collect information you provide directly to us, such as when you fill in a contact form, book a call, or communicate with us by email or phone. This includes your name, email address, phone number, and any other information you choose to provide.</p>
+<p>We also automatically collect certain technical information when you visit our website, including your IP address, browser type, and pages visited, through analytics tools.</p>
+<h2>How we use your information</h2>
+<p>We use the information we collect to respond to your enquiries, provide our services, improve our website, and communicate with you about projects and updates. We do not sell your personal information to third parties.</p>
+<h2>Data retention</h2>
+<p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, or as required by law. You may request deletion of your data at any time by contacting us.</p>
+<h2>Contact us</h2>
+<p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:ngooisaac@gmail.com" style="color:var(--p3)">ngooisaac@gmail.com</a> or by phone at +44 7405 092285.</p>
+</div>
+</div>
+</div>
+</div><!-- /page-privacy -->
+
+<!-- ===== TERMS PAGE ===== -->
+<div class="page" id="page-terms">
+<div style="padding:140px 0 100px">
+<div class="container-sm">
+<div class="section-label">Legal</div>
+<h1 style="margin-bottom:8px">Terms of Service</h1>
+<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: January 2025</p>
+<div class="legal-content">
+<p>These Terms of Service govern your use of the Orvexa Labs website and services. By engaging our services, you agree to these terms.</p>
+<h2>Services</h2>
+<p>Orvexa Labs provides web design, development, and AI call assistant services. Specific deliverables, timelines, and pricing are defined in individual project proposals and contracts.</p>
+<h2>Payment</h2>
+<p>Projects require a deposit (typically 50%) before work begins. The remaining balance is due upon project completion and prior to final delivery. Rush fees may apply for expedited timelines.</p>
+<h2>Intellectual property</h2>
+<p>Upon receipt of full payment, all design files, code, and assets created for your project transfer to you as the client. We retain the right to display work in our portfolio unless a confidentiality agreement is in place.</p>
+<h2>Revisions</h2>
+<p>The number of included revision rounds is specified in each project proposal. Additional revisions beyond the included rounds are charged at our standard hourly rate.</p>
+<h2>Limitation of liability</h2>
+<p>Orvexa Labs shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the amount paid for the relevant project.</p>
+<h2>Contact</h2>
+<p>For questions regarding these terms, contact us at <a href="mailto:ngooisaac@gmail.com" style="color:var(--p3)">ngooisaac@gmail.com</a>.</p>
+</div>
+</div>
+</div>
+</div><!-- /page-terms -->
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<a class="nav-logo" href="#" onclick="showPage('home')"><span>Orvexa</span> Labs</a>
+<p>Premium web design and AI solutions for businesses that take their digital presence seriously.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<a href="tel:+447405092285" style="font-size:.82rem;color:var(--text3)">+44 7405 092285</a>
+<span style="color:var(--text3)">·</span>
+<a href="mailto:ngooisaac@gmail.com" style="font-size:.82rem;color:var(--text3)">CEO email (temporary): ngooisaac@gmail.com</a>
+</div>
+</div>
+<div class="footer-col">
+<h5>Services</h5>
+<a href="#" onclick="showPage('services')">Web Design</a>
+<a href="#" onclick="showPage('services')">Development</a>
+<a href="#" onclick="showPage('services')">Landing Pages</a>
+<a href="#" onclick="showPage('services')">AI Call Assistants</a>
+</div>
+<div class="footer-col">
+<h5>Company</h5>
+<a href="#" onclick="showPage('about')">About</a>
+<a href="#" onclick="showPage('work')">Work</a>
+<a href="#" onclick="showPage('pricing')">Pricing</a>
+<a href="#" onclick="showPage('blog')">Blog</a>
+</div>
+<div class="footer-col">
+<h5>Connect</h5>
+<a href="#" onclick="showPage('contact')">Contact</a>
+<a href="#" onclick="showPage('book')">Book a Call</a>
+<a href="#" onclick="showPage('privacy')">Privacy Policy</a>
+<a href="#" onclick="showPage('terms')">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Orvexa Labs. All rights reserved.</p>
+<div class="socials">
+<a href="#" class="social-link">in</a>
+<a href="#" class="social-link">tw</a>
+<a href="#" class="social-link">ig</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// ── PAGE ROUTING ──
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  observeFadeIns();
+});
+
+// ── MOBILE NAV ──
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── WORK FILTER ──
+function filterWork(btn, cat) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#workGrid .work-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ── CONTACT FORM ──
+async function submitForm() {
+  const name     = document.getElementById('cf-name').value.trim();
+  const email    = document.getElementById('cf-email').value.trim();
+  const biz      = document.getElementById('cf-biz').value.trim();
+  const budget   = document.getElementById('cf-budget').value;
+  const timeline = document.getElementById('cf-timeline').value;
+  const msg      = document.getElementById('cf-msg').value.trim();
+
+  if (!name || !email || !msg) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+
+  // Show loading state on button
+  const btn = document.querySelector('#contactFormWrapper .btn-primary');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Sending…';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  try {
+    const res = await fetch('https://formspree.io/f/mzdanele', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, business: biz, budget, timeline, message: msg })
+    });
+
+    if (res.ok) {
+      document.getElementById('contactFormWrapper').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      window.scrollTo({top: document.getElementById('formSuccess').offsetTop - 100, behavior:'smooth'});
+    } else {
+      // Reset button and show error
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      alert('Something went wrong. Please try again or email us directly at ngooisaac@gmail.com');
+    }
+  } catch(err) {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    alert('Network error. Please check your connection and try again.');
+  }
+}
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  observeFadeIns();
+});
+
+// ── MOBILE NAV ──
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── WORK FILTER ──
+function filterWork(btn, cat) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#workGrid .work-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+// ── FADE IN OBSERVER ──
+function observeFadeIns() {
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('load', () => { setTimeout(observeFadeIns, 100); });
+document.querySelectorAll('.fade-in').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
+});
+</script>
+</body>
+</html>
