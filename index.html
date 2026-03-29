@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
 :root {
   --bg: #080810;
@@ -421,7 +422,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 @keyframes featShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
 /* Hero particles canvas */
-#hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0}
+#hero-shader{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#hero-shader canvas{display:block;width:100%!important;height:100%!important}
 
 /* Blog card hover */
 .blog-card:hover{transform:translateY(-6px);border-color:rgba(108,59,255,0.3);box-shadow:0 16px 40px rgba(108,59,255,0.14)}
@@ -533,7 +535,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 <!-- HERO -->
 <section class="hero">
-<canvas id="hero-particles"></canvas>
+<div id="hero-shader"></div>
 <div class="hero-glow"></div>
 <div class="container">
 <div class="hero-content">
@@ -1643,52 +1645,77 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
   })();
 })();
 
-// ── HERO PARTICLES ──
+// ── HERO SHADER (Three.js WebGL) ──
 (function() {
-  const canvas = document.getElementById('hero-particles');
-  if (!canvas) return;
-  const hero = canvas.parentElement;
-  const ctx = canvas.getContext('2d');
-  const COLORS = ['rgba(108,59,255,', 'rgba(139,92,246,', 'rgba(192,132,252,'];
-  let pts = [];
+  const container = document.getElementById('hero-shader');
+  if (!container || typeof THREE === 'undefined') return;
+
+  const vertexShader = `
+    void main() {
+      gl_Position = vec4(position, 1.0);
+    }
+  `;
+
+  // Fragment shader tuned to Orvexa purple palette
+  // #6C3BFF (108,59,255) · #8B5CF6 (139,92,246) · #C084FC (192,132,252)
+  const fragmentShader = `
+    precision highp float;
+    uniform vec2 resolution;
+    uniform float time;
+
+    void main(void) {
+      vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+      float t = time * 0.05;
+      float lineWidth = 0.002;
+
+      vec3 raw = vec3(0.0);
+      for(int j = 0; j < 3; j++){
+        for(int i = 0; i < 5; i++){
+          raw[j] += lineWidth * float(i*i) / abs(
+            fract(t - 0.01 * float(j) + float(i) * 0.01) * 5.0
+            - length(uv)
+            + mod(uv.x + uv.y, 0.2)
+          );
+        }
+      }
+
+      // Remap to Orvexa purple/violet — bias R low, G minimal, B dominant
+      float r = raw.r * 0.46 + raw.b * 0.30 + raw.g * 0.13;
+      float g = raw.g * 0.23 + raw.r * 0.11 + raw.b * 0.16;
+      float b = raw.b * 0.98 + raw.r * 0.68 + raw.g * 0.48;
+
+      gl_FragColor = vec4(r, g, b, 1.0);
+    }
+  `;
+
+  const camera = new THREE.Camera();
+  camera.position.z = 1;
+  const scene = new THREE.Scene();
+  const geometry = new THREE.PlaneGeometry(2, 2);
+  const uniforms = {
+    time:       { value: 1.0 },
+    resolution: { value: new THREE.Vector2() }
+  };
+  const material = new THREE.ShaderMaterial({ uniforms, vertexShader, fragmentShader });
+  scene.add(new THREE.Mesh(geometry, material));
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
 
   function resize() {
-    canvas.width  = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    renderer.setSize(w, h);
+    uniforms.resolution.value.set(renderer.domElement.width, renderer.domElement.height);
   }
   resize();
-  new ResizeObserver(resize).observe(hero);
+  window.addEventListener('resize', resize);
 
-  for (let i = 0; i < 70; i++) {
-    pts.push({
-      x: Math.random() * hero.offsetWidth,
-      y: Math.random() * hero.offsetHeight,
-      r: Math.random() * 1.4 + 0.4,
-      dx: (Math.random() - 0.5) * 0.28,
-      dy: (Math.random() - 0.5) * 0.28,
-      o: Math.random() * 0.45 + 0.1,
-      ph: Math.random() * Math.PI * 2,
-      col: COLORS[Math.floor(Math.random() * COLORS.length)]
-    });
-  }
-
-  (function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    pts.forEach(p => {
-      p.ph += 0.018;
-      p.x  += p.dx;
-      p.y  += p.dy;
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width)  p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-      const alpha = p.o * (0.65 + 0.35 * Math.sin(p.ph));
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.col + alpha + ')';
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
+  (function animate() {
+    requestAnimationFrame(animate);
+    uniforms.time.value += 0.05;
+    renderer.render(scene, camera);
   })();
 })();
 
