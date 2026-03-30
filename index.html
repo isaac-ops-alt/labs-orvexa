@@ -138,7 +138,9 @@ section{padding:100px 0}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:1024px){.work-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.work-grid{grid-template-columns:1fr}}
-.work-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:var(--trans)}
+.work-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:var(--trans);cursor:pointer}
+.work-visit{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:600;color:var(--p3);margin-top:14px;transition:color .2s,gap .2s;text-decoration:none}
+.work-visit:hover{color:var(--text);gap:8px}
 .work-card:hover{transform:translateY(-6px);box-shadow:var(--glow-sm);border-color:rgba(108,59,255,0.25)}
 .work-card-img{height:220px;background:var(--surface2);position:relative;overflow:hidden}
 .work-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
@@ -685,56 +687,59 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="container">
 <div class="section-title">
 <div class="section-label">Featured Work</div>
-<h2>Results that speak louder than decks.</h2>
-<p>A sample of recent projects and the outcomes they delivered.</p>
+<h2>Real projects. Real results.</h2>
+<p>A selection of recent client websites — click any card to see the live site.</p>
 </div>
 <div class="work-grid">
-<div class="work-card fade-in">
+<div class="work-card fade-in" onclick="window.open('https://sprayartistsleicester.com/','_blank')">
 <div class="work-card-img">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Nexus Analytics dashboard"/>
-<div class="img-overlay"></div><div class="proj-label">NEXUS</div>
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Spray Artists Leicester"/>
+<div class="img-overlay"></div><div class="proj-label">SPRAY ARTISTS</div>
 </div>
 <div class="work-card-body">
-<div class="work-tag">SaaS / Landing Page</div>
-<h4>Nexus Analytics — Lead Gen Overhaul</h4>
-<p>Redesigned the entire marketing site and landing flow to reduce bounce and push qualified demos.</p>
+<div class="work-tag">Automotive / Local Business</div>
+<h4>Spray Artists Leicester — Lead Gen Site</h4>
+<p>Premium dark-theme site for a spray and bodywork business, built to drive local enquiries and showcase quality work.</p>
 <div class="work-metrics">
-<div class="metric"><span>+142%</span><small>Demo signups</small></div>
-<div class="metric"><span>-38%</span><small>Bounce rate</small></div>
-<div class="metric"><span>2.1s</span><small>Load time</small></div>
+<div class="metric"><span>4.9★</span><small>Google rating</small></div>
+<div class="metric"><span>Local</span><small>SEO focused</small></div>
+<div class="metric"><span>Dark</span><small>Premium theme</small></div>
+</div>
+<a class="work-visit" href="https://sprayartistsleicester.com/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a>
 </div>
 </div>
-</div>
-<div class="work-card fade-in">
+<div class="work-card fade-in" onclick="window.open('https://thewaysofsam.vercel.app','_blank')">
 <div class="work-card-img">
-<img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80" alt="Flora Botanicals ecommerce store"/>
-<div class="img-overlay"></div><div class="proj-label">FLORA</div>
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80" alt="The Ways of Sam — Makeup Artist"/>
+<div class="img-overlay"></div><div class="proj-label">WAYS OF SAM</div>
 </div>
 <div class="work-card-body">
-<div class="work-tag">Ecommerce</div>
-<h4>Flora Botanicals — Full Store Build</h4>
-<p>End-to-end ecommerce build with custom product pages, optimised checkout flow, and brand identity.</p>
+<div class="work-tag">Personal Brand / Beauty</div>
+<h4>The Ways of Sam — Makeup Artist</h4>
+<p>Luxury personal brand site with a full-viewport video hero, masonry gallery, and booking form designed to convert premium clients.</p>
 <div class="work-metrics">
-<div class="metric"><span>+89%</span><small>Conversion rate</small></div>
-<div class="metric"><span>£34k</span><small>Rev in month 1</small></div>
-<div class="metric"><span>4.8★</span><small>UX score</small></div>
+<div class="metric"><span>Video</span><small>Hero BG</small></div>
+<div class="metric"><span>15+</span><small>Gallery images</small></div>
+<div class="metric"><span>Booking</span><small>Form integrated</small></div>
+</div>
+<a class="work-visit" href="https://thewaysofsam.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a>
 </div>
 </div>
-</div>
-<div class="work-card fade-in">
+<div class="work-card fade-in" onclick="window.open('https://luxing-two.vercel.app/','_blank')">
 <div class="work-card-img">
-<img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=700&q=80" alt="Vance Legal professional website"/>
-<div class="img-overlay"></div><div class="proj-label">VANCE</div>
+<img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=700&q=80" alt="Luxing Luxury Jewellery"/>
+<div class="img-overlay"></div><div class="proj-label">LUXING</div>
 </div>
 <div class="work-card-body">
-<div class="work-tag">Professional Services</div>
-<h4>Vance Legal — Brand + Web Presence</h4>
-<p>Brand positioning and website for a boutique law firm needing to compete with larger players.</p>
+<div class="work-tag">Luxury E-commerce</div>
+<h4>Luxing — Luxury Jewellery Store</h4>
+<p>High-end jewellery e-commerce with animated gem hero, product modals, full cart and checkout flow, and editorial gold aesthetic.</p>
 <div class="work-metrics">
-<div class="metric"><span>3×</span><small>Inbound enquiries</small></div>
-<div class="metric"><span>#1</span><small>Local SEO rank</small></div>
-<div class="metric"><span>98</span><small>Lighthouse score</small></div>
+<div class="metric"><span>Full</span><small>Cart + checkout</small></div>
+<div class="metric"><span>Dark</span><small>Gold aesthetic</small></div>
+<div class="metric"><span>E-com</span><small>Ready</small></div>
 </div>
+<a class="work-visit" href="https://luxing-two.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a>
 </div>
 </div>
 </div>
@@ -949,18 +954,43 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <p style="font-size:1.1rem;max-width:520px;margin-bottom:48px">Every project here is a real business problem solved with design and development. Numbers are real.</p>
 <div class="filter-tabs">
 <button class="filter-tab active" onclick="filterWork(this,'all')">All</button>
+<button class="filter-tab" onclick="filterWork(this,'automotive')">Automotive</button>
 <button class="filter-tab" onclick="filterWork(this,'business')">Business</button>
-<button class="filter-tab" onclick="filterWork(this,'ecommerce')">Ecommerce</button>
-<button class="filter-tab" onclick="filterWork(this,'landing')">Landing Pages</button>
+<button class="filter-tab" onclick="filterWork(this,'ecommerce')">E-commerce</button>
 <button class="filter-tab" onclick="filterWork(this,'brand')">Personal Brand</button>
 </div>
 <div class="work-grid" id="workGrid">
-<div class="work-card" data-cat="landing"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Nexus Analytics"/><div class="img-overlay"></div><div class="proj-label">NEXUS</div></div><div class="work-card-body"><div class="work-tag">SaaS / Landing Page</div><h4>Nexus Analytics</h4><p>Full marketing site + landing page redesign for a B2B analytics SaaS looking to increase demo signups.</p><div class="work-metrics"><div class="metric"><span>+142%</span><small>Demo signups</small></div><div class="metric"><span>-38%</span><small>Bounce rate</small></div><div class="metric"><span>2.1s</span><small>Load time</small></div></div></div></div>
-<div class="work-card" data-cat="ecommerce"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80" alt="Flora Botanicals"/><div class="img-overlay"></div><div class="proj-label">FLORA</div></div><div class="work-card-body"><div class="work-tag">Ecommerce</div><h4>Flora Botanicals</h4><p>End-to-end Shopify build with custom product pages and checkout optimisation for a UK wellness brand.</p><div class="work-metrics"><div class="metric"><span>+89%</span><small>Conversion</small></div><div class="metric"><span>£34k</span><small>Month 1 revenue</small></div><div class="metric"><span>4.8★</span><small>UX score</small></div></div></div></div>
-<div class="work-card" data-cat="business"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=700&q=80" alt="Vance Legal"/><div class="img-overlay"></div><div class="proj-label">VANCE</div></div><div class="work-card-body"><div class="work-tag">Professional Services</div><h4>Vance Legal</h4><p>Brand positioning and website for a boutique London law firm — designed to compete with much larger practices.</p><div class="work-metrics"><div class="metric"><span>3×</span><small>Inbound enquiries</small></div><div class="metric"><span>#1</span><small>Local SEO</small></div><div class="metric"><span>98</span><small>Lighthouse</small></div></div></div></div>
-<div class="work-card" data-cat="brand"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80" alt="Kairo Fitness Coach"/><div class="img-overlay"></div><div class="proj-label">KAIRO</div></div><div class="work-card-body"><div class="work-tag">Personal Brand</div><h4>Kairo — Fitness Coach</h4><p>Personal brand site and lead funnel for a premium fitness coach transitioning from referral-only to online.</p><div class="work-metrics"><div class="metric"><span>+210%</span><small>Online enquiries</small></div><div class="metric"><span>8 wks</span><small>To full client roster</small></div><div class="metric"><span>100%</span><small>Ownership</small></div></div></div></div>
-<div class="work-card" data-cat="landing"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=700&q=80" alt="Peak Recruitment"/><div class="img-overlay"></div><div class="proj-label">PEAK</div></div><div class="work-card-body"><div class="work-tag">Landing Page</div><h4>Peak Recruitment</h4><p>High-converting candidate and client landing pages for a specialist recruitment agency.</p><div class="work-metrics"><div class="metric"><span>+67%</span><small>CV submissions</small></div><div class="metric"><span>-44%</span><small>Cost per lead</small></div><div class="metric"><span>1.8s</span><small>Load time</small></div></div></div></div>
-<div class="work-card" data-cat="business"><div class="work-card-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" alt="Alyx Dental Practice"/><div class="img-overlay"></div><div class="proj-label">ALYX</div></div><div class="work-card-body"><div class="work-tag">Business / AI</div><h4>Alyx Dental Practice</h4><p>New website + AI Call Assistant integration. Patients can now book outside hours without human staff involvement.</p><div class="work-metrics"><div class="metric"><span>+52%</span><small>Bookings</small></div><div class="metric"><span>0</span><small>Missed calls</small></div><div class="metric"><span>£0</span><small>Extra staff cost</small></div></div></div></div>
+
+<div class="work-card" data-cat="automotive" onclick="window.open('https://sprayartistsleicester.com/','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Spray Artists Leicester"/><div class="img-overlay"></div><div class="proj-label">SPRAY ARTISTS</div></div>
+<div class="work-card-body"><div class="work-tag">Automotive / Local Business</div><h4>Spray Artists Leicester</h4><p>Premium dark-theme site for a Leicester spray and bodywork business — before/after gallery, quote form, and local SEO foundations.</p><div class="work-metrics"><div class="metric"><span>4.9★</span><small>Google rating</small></div><div class="metric"><span>Local</span><small>SEO optimised</small></div><div class="metric"><span>Dark</span><small>Premium theme</small></div></div><a class="work-visit" href="https://sprayartistsleicester.com/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
+<div class="work-card" data-cat="business" onclick="window.open('https://miss-b.vercel.app','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=700&q=80" alt="Miss B Catering"/><div class="img-overlay"></div><div class="proj-label">MISS B</div></div>
+<div class="work-card-body"><div class="work-tag">Catering / Hospitality</div><h4>Miss B Catering</h4><p>Warm, multicultural catering brand site with a filterable menu, tiered packages, lightbox gallery, and booking form.</p><div class="work-metrics"><div class="metric"><span>3</span><small>Menu categories</small></div><div class="metric"><span>Gold</span><small>Premium aesthetic</small></div><div class="metric"><span>Booking</span><small>Form integrated</small></div></div><a class="work-visit" href="https://miss-b.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
+<div class="work-card" data-cat="brand" onclick="window.open('https://thewaysofsam.vercel.app','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80" alt="The Ways of Sam"/><div class="img-overlay"></div><div class="proj-label">WAYS OF SAM</div></div>
+<div class="work-card-body"><div class="work-tag">Personal Brand / Beauty</div><h4>The Ways of Sam — Makeup Artist</h4><p>Luxury personal brand site with a full-viewport video hero, masonry gallery, sparkle cursor, and premium booking flow.</p><div class="work-metrics"><div class="metric"><span>Video</span><small>Hero background</small></div><div class="metric"><span>15+</span><small>Gallery images</small></div><div class="metric"><span>Luxury</span><small>Mocha aesthetic</small></div></div><a class="work-visit" href="https://thewaysofsam.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
+<div class="work-card" data-cat="automotive" onclick="window.open('https://jcmotors-lilac.vercel.app','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=700&q=80" alt="JC Motors"/><div class="img-overlay"></div><div class="proj-label">JC MOTORS</div></div>
+<div class="work-card-body"><div class="work-tag">Automotive / Business</div><h4>JC Motors — Independent Garage</h4><p>Dark orange-accented site for an independent Leicester garage — services grid, stat counters, reviews, and a booking enquiry form.</p><div class="work-metrics"><div class="metric"><span>Since</span><small>2008 — trusted</small></div><div class="metric"><span>Zero</span><small>Hidden fees</small></div><div class="metric"><span>Local</span><small>SEO focused</small></div></div><a class="work-visit" href="https://jcmotors-lilac.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
+<div class="work-card" data-cat="business" onclick="window.open('https://massawacleaning.vercel.app','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" alt="Massawa Cleaning"/><div class="img-overlay"></div><div class="proj-label">MASSAWA</div></div>
+<div class="work-card-body"><div class="work-tag">Cleaning / Service Business</div><h4>Massawa Cleaning — Booking Site</h4><p>Navy and teal cleaning company site with a booking-focused structure, 4-step process, service area coverage, and quote form.</p><div class="work-metrics"><div class="metric"><span>Quote</span><small>Form integrated</small></div><div class="metric"><span>Process</span><small>4-step visual</small></div><div class="metric"><span>Trust</span><small>Badges + reviews</small></div></div><a class="work-visit" href="https://massawacleaning.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
+<div class="work-card" data-cat="ecommerce" onclick="window.open('https://luxing-two.vercel.app/','_blank')">
+<div class="work-card-img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=700&q=80" alt="Luxing Jewellery"/><div class="img-overlay"></div><div class="proj-label">LUXING</div></div>
+<div class="work-card-body"><div class="work-tag">Luxury E-commerce</div><h4>Luxing — Luxury Jewellery Store</h4><p>Black-and-gold jewellery e-commerce concept — animated gem hero, product modals, wishlist, and full cart and checkout flow.</p><div class="work-metrics"><div class="metric"><span>Full</span><small>Cart + checkout</small></div><div class="metric"><span>Wishlist</span><small>+ quick-add</small></div><div class="metric"><span>Black</span><small>Gold aesthetic</small></div></div><a class="work-visit" href="https://luxing-two.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit site ↗</a></div>
+</div>
+
 </div>
 </div>
 
