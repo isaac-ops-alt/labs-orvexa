@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>Orvexa Labs — Web Design & AI Solutions</title>
 
 <meta name="description" content="Orvexa Labs builds premium web experiences that convert. Web design, development, and AI call assistants for ambitious businesses."/>
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" async></script>
 <style>
 :root {
   --bg: #080810;
@@ -39,8 +39,8 @@
   --trans: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;max-width:100vw}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 ul{list-style:none}
@@ -565,6 +565,33 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .btn-liquid:active{transform:translateY(0) scale(0.98)}
 .btn-liquid svg{width:16px;height:16px;transition:transform .3s}
 .btn-liquid:hover svg{transform:translateX(3px)}
+
+/* ── RESPONSIVE LAYOUT FIXES ── */
+.why-us-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.services-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+
+@media(max-width:768px){
+  .why-us-layout{grid-template-columns:1fr;gap:40px}
+  .services-type-grid{grid-template-columns:1fr}
+  .cta-block{padding:48px 24px}
+  section{padding:72px 0}
+  .hero{padding:120px 0 72px}
+  .about-hero{padding:120px 0 60px}
+}
+
+@media(max-width:480px){
+  .cta-block{padding:36px 20px}
+  .contact-form{padding:28px 20px}
+  .cal-placeholder{padding:40px 20px}
+}
+
+/* ── REDUCE HEAVY GPU EFFECTS ON MOBILE ── */
+@media(max-width:768px){
+  .orb-a,.orb-b,.orb-c{filter:blur(60px)!important}
+  .orb-a{width:400px;height:400px}
+  .orb-b{width:360px;height:360px}
+  .orb-c{width:260px;height:260px}
+}
 </style>
 </head>
 <body>
@@ -769,7 +796,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- WHY ORVEXA -->
 <section>
 <div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+<div class="why-us-layout">
 <div>
 <div class="section-label">Why Us</div>
 <h2>Built for businesses that care about quality.</h2>
@@ -891,7 +918,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 </div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px">
+<div class="services-type-grid">
 <div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Landing Pages</h4><p style="font-size:.85rem">High-converting single-page sites for campaigns, products, or lead generation.</p></div>
 <div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Business Websites</h4><p style="font-size:.85rem">Multi-page sites built to establish credibility and generate qualified enquiries.</p></div>
 <div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Redesigns</h4><p style="font-size:.85rem">Lift your existing site out of 2018 and into a design that matches your ambitions.</p></div>
@@ -1683,10 +1710,9 @@ window.addEventListener('scroll', () => {
   observeFadeIns();
 }, { passive: true });
 
-window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 900);
-  setTimeout(observeFadeIns, 100);
-});
+function hideLoader() { document.getElementById('loader').classList.add('hidden'); }
+window.addEventListener('load', () => { setTimeout(hideLoader, 900); setTimeout(observeFadeIns, 100); });
+setTimeout(hideLoader, 4000);
 
 document.querySelectorAll('.fade-in').forEach((el, i) => {
   el.style.transitionDelay = (i * 0.08) + 's';
@@ -1743,9 +1769,10 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
 })();
 
 // ── HERO SHADER (WebGL sine-wave — Orvexa purple palette) ──
-(function() {
+(function initShader() {
   const container = document.getElementById('hero-shader');
-  if (!container || typeof THREE === 'undefined') return;
+  if (!container) return;
+  if (typeof THREE === 'undefined') { window.addEventListener('load', initShader); return; }
 
   // RawShaderMaterial requires explicit attribute declaration
   const vertexShader = `
