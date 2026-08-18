@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>Orvexa Labs — Web Design & AI Solutions</title>
+<title>Orvexa Labs — Technology, AI & Innovation</title>
 
-<meta name="description" content="Orvexa Labs builds premium web experiences that convert. Web design, development, and AI call assistants for ambitious businesses."/>
-<meta property="og:title" content="Orvexa Labs — Web Design & AI Solutions"/>
-<meta property="og:description" content="Premium web design that converts. Trusted by modern businesses."/>
+<meta name="description" content="Orvexa Labs builds digital products and helps businesses use software, AI and automation to solve real-world problems."/>
+<meta property="og:title" content="Orvexa Labs — Technology, AI & Innovation"/>
+<meta property="og:description" content="Orvexa Labs builds digital products and helps businesses turn technology, AI and automation into real-world solutions."/>
 <meta property="og:type" content="website"/>
 
 <link rel="icon" type="image/png" href="Orvexa logo.png">
@@ -164,6 +164,9 @@ section{padding:100px 0}
 .process-step .num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:16px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.4}
 .process-step h4{margin-bottom:8px}
 .process-step p{font-size:.88rem}
+.process-steps-6{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
+@media(max-width:900px){.process-steps-6{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.process-steps-6{grid-template-columns:1fr}}
 
 /* ── WHY US ── */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0}
@@ -310,7 +313,7 @@ section{padding:100px 0}
 
 /* ── FOOTER ── */
 footer{background:var(--bg2);border-top:1px solid var(--border2);padding:64px 0 32px}
-.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-inner{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:40px;margin-bottom:48px}
 @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
 .footer-brand p{font-size:.88rem;margin-top:14px;margin-bottom:24px;max-width:260px}
@@ -479,7 +482,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ── SMOOTH FAQ ACCORDION ── */
 .faq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .4s cubic-bezier(0.16,1,0.3,1),padding .3s ease;color:var(--text2);font-size:.92rem;line-height:1.75;display:block!important}
-.faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+.faq-item.open .faq-a{max-height:340px;padding:0 24px 20px}
 
 /* ── TYPEWRITER CURSOR ── */
 .typewriter::after{content:'|';animation:cursorBlink 1s step-end infinite;color:var(--p2);-webkit-text-fill-color:var(--p2)}
@@ -489,8 +492,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .stats-strip{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center}
 @media(max-width:768px){.stats-strip{grid-template-columns:1fr 1fr;gap:24px}.stat-sep{display:none}}
 .stat-item{text-align:center;padding:20px}
-.stat-num{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1;margin-bottom:8px}
-.stat-label{font-size:.78rem;color:var(--text3);font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.stat-num{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;line-height:1.2;margin-bottom:8px}
+.stat-label{font-size:.78rem;color:var(--text3);font-weight:500;letter-spacing:.03em}
 .stat-sep{width:1px;height:60px;background:var(--border2)}
 
 /* ── WORK FILTER ANIMATION ── */
@@ -592,6 +595,88 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .orb-b{width:360px;height:360px}
   .orb-c{width:260px;height:260px}
 }
+
+/* ════════════════════════════════
+   NEW: PRODUCT / LAB / TRANSFORMATION LAYER
+   ════════════════════════════════ */
+
+/* ── PRODUCT FEATURE (OverCome) ── */
+.product-feature{background:var(--surface);border:1px solid rgba(108,59,255,0.25);border-radius:24px;padding:56px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;position:relative;overflow:hidden;margin-top:60px}
+.product-feature::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(192,132,252,0.16) 0%,transparent 65%);pointer-events:none}
+@media(max-width:900px){.product-feature{grid-template-columns:1fr;padding:36px 28px}}
+.product-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.12);border:1px solid rgba(108,59,255,0.3);border-radius:100px;padding:6px 16px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p3);margin-bottom:20px}
+.product-status{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--text3);margin-bottom:24px}
+.product-status::before{content:'';width:6px;height:6px;background:#ffb454;border-radius:50%;animation:pulse 2s infinite}
+.product-feature-list{display:flex;flex-direction:column;gap:12px;margin:24px 0 32px}
+.product-feature-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text2)}
+.product-feature-item::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--grad2)}
+.product-visual{position:relative;background:var(--bg2);border:1px solid var(--border2);border-radius:20px;padding:32px;min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:16px;overflow:hidden}
+.product-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(108,59,255,0.18),transparent 60%)}
+.product-visual-row{position:relative;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:12px;padding:14px 16px}
+.product-visual-dot{width:8px;height:8px;border-radius:50%;background:var(--grad2);flex-shrink:0}
+.product-visual-bar{height:8px;border-radius:4px;background:linear-gradient(90deg,rgba(108,59,255,0.4),rgba(192,132,252,0.15));width:100%}
+.built-by{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--text3);margin-top:8px}
+.built-by strong{color:var(--p3)}
+
+/* ── FLOW STEPS (AI Transformation) ── */
+.flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px}
+@media(max-width:1024px){.flow-steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.flow-steps{grid-template-columns:1fr}}
+.flow-step{padding:28px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);transition:var(--trans)}
+.flow-step:hover{border-color:rgba(108,59,255,0.4);transform:translateY(-5px);background:var(--surface2)}
+.flow-step .flow-num{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--p3);margin-bottom:12px;text-transform:uppercase}
+.flow-step h4{margin-bottom:8px;font-size:1.02rem}
+.flow-step p{font-size:.85rem}
+
+/* ── BUILD GRID (What We Can Build / Services preview) ── */
+.build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+@media(max-width:900px){.build-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.build-grid{grid-template-columns:1fr}}
+.build-item{padding:28px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm);transition:var(--trans)}
+.build-item:hover{border-color:rgba(108,59,255,0.35);background:var(--surface2);transform:translateY(-3px)}
+.build-item .q{font-weight:700;font-size:.98rem;margin-bottom:6px;color:var(--text)}
+.build-item .a{font-size:.85rem;color:var(--p3);font-weight:600}
+.build-item h4{margin-bottom:8px}
+.build-item p{font-size:.85rem}
+
+/* ── THE LAB ── */
+.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+@media(max-width:900px){.lab-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.lab-grid{grid-template-columns:1fr}}
+.lab-card{padding:30px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);position:relative;overflow:hidden;transition:var(--trans)}
+.lab-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(108,59,255,0.08),transparent 60%);pointer-events:none}
+.lab-card:hover{transform:translateY(-6px);border-color:rgba(108,59,255,0.35);box-shadow:var(--glow-sm)}
+.lab-card .lab-icon{width:40px;height:40px;background:rgba(108,59,255,0.14);border-radius:10px;display:grid;place-items:center;color:var(--p3);margin-bottom:18px}
+.lab-card .lab-icon svg{width:20px;height:20px}
+.lab-card h4{margin-bottom:8px}
+.lab-card p{font-size:.85rem}
+
+/* ── AI SEMINAR CARDS ── */
+.seminar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.seminar-grid{grid-template-columns:1fr}}
+.seminar-card{padding:32px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);transition:var(--trans)}
+.seminar-card:hover{border-color:rgba(108,59,255,0.35);transform:translateY(-5px);box-shadow:var(--glow-sm)}
+.seminar-card .num{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:var(--p3);letter-spacing:.1em;margin-bottom:14px;text-transform:uppercase}
+.seminar-card h4{margin-bottom:10px;font-size:1.08rem}
+.seminar-card p{font-size:.88rem}
+
+/* ── PILL CHECKBOX GROUP (contact form) ── */
+.pill-group{display:flex;flex-wrap:wrap;gap:8px}
+.pill-check{display:inline-flex;align-items:center;padding:8px 16px;border-radius:100px;border:1px solid var(--border2);font-size:.82rem;color:var(--text2);cursor:pointer;transition:var(--trans);user-select:none;background:var(--bg2)}
+.pill-check:hover{border-color:rgba(108,59,255,0.4)}
+.pill-check.active{background:rgba(108,59,255,0.14);border-color:rgba(108,59,255,0.5);color:var(--text)}
+
+/* ── SPLIT LABEL (Selected Work) ── */
+.work-split-label{display:flex;align-items:center;gap:10px;margin:48px 0 24px}
+.work-split-label h3{font-size:1.1rem;font-family:'Syne',sans-serif}
+.work-split-label .line{flex:1;height:1px;background:var(--border2)}
+
+/* ── AI NETWORK HERO OVERLAY ── */
+.hero-network{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5}
+.hero-network circle{fill:var(--p3);opacity:.55;animation:nodePulse 4s ease-in-out infinite}
+.hero-network line{stroke:url(#netGrad);stroke-width:1;opacity:.3}
+@keyframes nodePulse{0%,100%{opacity:.3}50%{opacity:.85}}
+@media(max-width:768px){.hero-network{opacity:.3}}
 </style>
 </head>
 <body>
@@ -611,13 +696,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="nav-inner">
 <a class="nav-logo" href="#" onclick="showPage('home')"><img src="Orvexa logo.png" alt="Orvexa Labs" onerror="this.style.display='none'" style="height:28px;width:auto;vertical-align:middle;margin-right:4px"><span>Orvexa</span> Labs</a>
 <div class="nav-links" id="navLinks">
+<a href="#" data-page="products" onclick="showPage('products')">Products</a>
 <a href="#" data-page="services" onclick="showPage('services')">Services</a>
-<a href="#" data-page="work" onclick="showPage('work')">Work</a>
-<a href="#" data-page="pricing" onclick="showPage('pricing')">Pricing</a>
+<a href="#" onclick="goHome('lab')">The Lab</a>
+<a href="#" data-page="blog" onclick="showPage('blog')">Insights</a>
 <a href="#" data-page="about" onclick="showPage('about')">About</a>
-<a href="#" data-page="blog" onclick="showPage('blog')">Blog</a>
 <a href="#" data-page="contact" onclick="showPage('contact')">Contact</a>
-<a href="#" data-page="book" onclick="showPage('book')" class="btn btn-primary btn-sm nav-cta">Book a Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" data-page="book" onclick="showPage('book')" class="btn btn-primary btn-sm nav-cta">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 <div class="nav-mobile-toggle" id="mobileToggle" onclick="toggleNav()">
 <span></span><span></span><span></span>
@@ -632,90 +717,179 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- HERO -->
 <section class="hero">
 <div id="hero-shader"></div>
+<svg class="hero-network" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="netGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6C3BFF"/><stop offset="100%" stop-color="#C084FC"/></linearGradient></defs>
+<line x1="110" y1="90" x2="290" y2="150"/><line x1="290" y1="150" x2="230" y2="300"/><line x1="290" y1="150" x2="480" y2="110"/>
+<line x1="480" y1="110" x2="650" y2="200"/><line x1="650" y1="200" x2="800" y2="130"/><line x1="230" y1="300" x2="400" y2="370"/>
+<line x1="400" y1="370" x2="600" y2="330"/><line x1="600" y1="330" x2="760" y2="400"/><line x1="480" y1="110" x2="560" y2="290"/>
+<circle cx="110" cy="90" r="2.6"/><circle cx="290" cy="150" r="3"/><circle cx="230" cy="300" r="2.4"/>
+<circle cx="480" cy="110" r="2.8"/><circle cx="650" cy="200" r="2.4"/><circle cx="800" cy="130" r="2.2"/>
+<circle cx="400" cy="370" r="2.6"/><circle cx="600" cy="330" r="2.4"/><circle cx="760" cy="400" r="2.2"/><circle cx="560" cy="290" r="2"/>
+</svg>
 <div class="hero-glow"></div>
 <div class="container">
 <div class="hero-content">
-<div class="hero-badge">✦ Web Design & AI Solutions</div>
-<h1>Websites that look<br><span class="grad-text typewriter" id="tw-word">premium</span> and actually<br>convert.</h1>
-<p class="hero-sub">We build web experiences that earn trust on first click and turn visitors into paying customers.</p>
+<div class="hero-badge">✦ Technology · Products · AI</div>
+<h1>We build what's next<br>in <span class="grad-text typewriter" id="tw-word">technology</span>.</h1>
+<p class="hero-sub">Orvexa Labs builds digital products and helps businesses turn technology, AI and automation into real-world solutions.</p>
 <div class="hero-ctas">
-<a href="#" onclick="showPage('book')" class="btn-liquid">Book a Free Discovery Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a href="#" onclick="showPage('work')" class="btn btn-secondary">View Our Work</a>
+<a href="#" onclick="showPage('products')" class="btn-liquid">Explore Our Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('book')" class="btn btn-secondary">Work With Orvexa</a>
+<a href="#" onclick="showPage('services')" class="btn-ghost">Explore Our Services →</a>
 </div>
 <div class="marquee-wrap">
 <div class="marquee-track">
 <div class="marquee-set">
-<div class="marquee-item"><span class="marquee-dot"></span>Mobile-first</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Fast-loading</div>
-<div class="marquee-item"><span class="marquee-dot"></span>SEO-ready</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Conversion-focused</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Premium Design</div>
-<div class="marquee-item"><span class="marquee-dot"></span>AI-Powered</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Lighthouse 90+</div>
-<div class="marquee-item"><span class="marquee-dot"></span>You Own Everything</div>
-<div class="marquee-item"><span class="marquee-dot"></span>On-time Delivery</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Product-Minded</div>
+<div class="marquee-item"><span class="marquee-dot"></span>AI-Native</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Security-Conscious</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Full-Stack Engineering</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Automation-Ready</div>
+<div class="marquee-item"><span class="marquee-dot"></span>UK · Cameroon</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Built to Scale</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Human + AI</div>
 </div>
 <div class="marquee-set" aria-hidden="true">
-<div class="marquee-item"><span class="marquee-dot"></span>Mobile-first</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Fast-loading</div>
-<div class="marquee-item"><span class="marquee-dot"></span>SEO-ready</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Conversion-focused</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Premium Design</div>
-<div class="marquee-item"><span class="marquee-dot"></span>AI-Powered</div>
-<div class="marquee-item"><span class="marquee-dot"></span>Lighthouse 90+</div>
-<div class="marquee-item"><span class="marquee-dot"></span>You Own Everything</div>
-<div class="marquee-item"><span class="marquee-dot"></span>On-time Delivery</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Product-Minded</div>
+<div class="marquee-item"><span class="marquee-dot"></span>AI-Native</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Security-Conscious</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Full-Stack Engineering</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Automation-Ready</div>
+<div class="marquee-item"><span class="marquee-dot"></span>UK · Cameroon</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Built to Scale</div>
+<div class="marquee-item"><span class="marquee-dot"></span>Human + AI</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHAT IS ORVEXA LABS -->
+<section style="padding-top:20px">
+<div class="container">
+<div class="section-title center">
+<div class="section-label" style="justify-content:center">What Is Orvexa Labs?</div>
+<h2>An innovation and technology company.</h2>
+<p>Orvexa Labs is focused on building digital products and helping businesses use technology more intelligently — from our own software to the systems we build for others.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="tag tag-primary">Products</div>
+<h3>We build our own technology.</h3>
+<p>We design, build and ship our own digital products — starting with OverCome, an AI-powered behaviour-change companion currently in development.</p>
+<a href="#" onclick="showPage('products')" class="btn btn-primary">See Our Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+<div class="service-card">
+<div class="tag tag-secondary">Technology Services</div>
+<h3>We help businesses build, integrate and automate.</h3>
+<p>From websites and mobile apps to AI integration and workflow automation — we help organisations turn technology into a real advantage.</p>
+<a href="#" onclick="showPage('services')" class="btn btn-secondary">See Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title">
+<div class="section-label">Products We're Building</div>
+<h2>We don't just build technology for others.</h2>
+<p>We build our own products, experiment with new ideas, and turn emerging technology into useful experiences.</p>
+</div>
+<div class="product-feature reveal">
+<div>
+<div class="product-badge">Orvexa Labs Product</div>
+<h2 style="margin-bottom:16px">OverCome</h2>
+<div class="product-status">Currently in development</div>
+<p style="margin-bottom:0">An AI-powered behaviour-change companion designed to help people understand their patterns, navigate difficult moments and regain control of their attention and habits.</p>
+<div class="product-feature-list">
+<div class="product-feature-item">AI-powered coaching</div>
+<div class="product-feature-item">Personalised behavioural insights</div>
+<div class="product-feature-item">Daily check-ins</div>
+<div class="product-feature-item">Journaling</div>
+<div class="product-feature-item">In-the-moment support</div>
+<div class="product-feature-item">Privacy-conscious architecture</div>
+</div>
+<a href="#" onclick="showPage('products')" class="btn btn-primary">Explore OverCome <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<div class="built-by">Built by <strong>Orvexa Labs</strong></div>
+</div>
+<div class="product-visual">
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar"></div></div>
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar" style="width:70%"></div></div>
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar" style="width:40%"></div></div>
+<div style="position:relative;text-align:center;margin-top:8px"><span style="display:inline-block;background:rgba(108,59,255,0.12);border:1px solid rgba(108,59,255,0.3);border-radius:100px;padding:6px 16px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Coming Soon</span></div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- SERVICES PREVIEW -->
-<section style="padding-top:40px">
+<section>
 <div class="container">
 <div class="section-title">
 <div class="section-label">What We Do</div>
-<h2>Two things, done exceptionally well.</h2>
-<p>We keep our focus narrow so the quality stays high. No bloated service lists.</p>
+<h2>Technology, built around your goals.</h2>
+<p>Whether you need to build something new, modernise an existing system or figure out where AI fits into your business, we work with you from idea to implementation.</p>
 </div>
-<div class="services-grid">
-<div class="service-card">
-<div class="tag tag-primary">Core Service</div>
-<h3>Web Design &amp; Development</h3>
-<p>From landing pages to full business websites — designed to convert, built to perform, and made to scale with your growth.</p>
-<div class="service-features">
-<div class="service-feature">UI/UX Design &amp; Brand-aligned aesthetics</div>
-<div class="service-feature">Custom website development</div>
-<div class="service-feature">Landing pages that drive action</div>
-<div class="service-feature">Performance &amp; SEO foundation</div>
+<div class="build-grid">
+<div class="build-item reveal"><h4>Web Development</h4><p>Business websites, web applications, SaaS platforms, dashboards and API integrations.</p></div>
+<div class="build-item reveal" data-delay="1"><h4>Mobile App Development</h4><p>iOS, Android and cross-platform apps — from MVP to full product.</p></div>
+<div class="build-item reveal" data-delay="2"><h4>AI Integration</h4><p>AI assistants, LLM integration, chat systems and intelligent document processing.</p></div>
+<div class="build-item reveal" data-delay="3"><h4>Business Automation</h4><p>Workflow automation, internal tools, CRM integrations and data processing.</p></div>
+<div class="build-item reveal"><h4>Custom Software</h4><p>Internal platforms, dashboards and digital infrastructure built for how you actually work.</p></div>
+<div class="build-item reveal" data-delay="1"><h4>AI Education &amp; Transformation</h4><p>Seminars, workshops and workflow audits that help your team adopt AI properly.</p></div>
 </div>
-<a href="#" onclick="showPage('services')" class="btn btn-primary">Explore Service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</div>
-<div class="service-card">
-<div class="tag tag-secondary">Add-on Service</div>
-<h3>AI Call Assistants</h3>
-<p>Never miss a lead again. Our AI voice assistants handle calls after hours — answering questions, capturing details, and booking appointments automatically.</p>
-<div class="service-features">
-<div class="service-feature">Handles calls when you're unavailable</div>
-<div class="service-feature">Answers FAQs naturally</div>
-<div class="service-feature">Captures lead details automatically</div>
-<div class="service-feature">Books appointments &amp; sends summaries</div>
-</div>
-<a href="#" onclick="showPage('services')" class="btn btn-secondary">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</div>
+<div style="margin-top:40px;text-align:center">
+<a href="#" onclick="showPage('services')" class="btn btn-secondary">See All Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
 </section>
 
-<!-- FEATURED WORK -->
+<!-- WHAT WE CAN BUILD -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title center">
+<div class="section-label" style="justify-content:center">What We Can Build</div>
+<h2>Bring us the problem.<br>We'll help you find the technology.</h2>
+</div>
+<div class="build-grid">
+<div class="build-item reveal"><div class="q">Need a website?</div><div class="a">We build it.</div></div>
+<div class="build-item reveal" data-delay="1"><div class="q">Need a mobile app?</div><div class="a">We build it.</div></div>
+<div class="build-item reveal" data-delay="2"><div class="q">Need AI inside your existing business?</div><div class="a">We integrate it.</div></div>
+<div class="build-item reveal" data-delay="3"><div class="q">Need repetitive work automated?</div><div class="a">We automate it.</div></div>
+<div class="build-item reveal"><div class="q">Need a custom internal platform?</div><div class="a">We build it.</div></div>
+<div class="build-item reveal" data-delay="1"><div class="q">Don't know what you need yet?</div><div class="a">That's exactly what the discovery conversation is for.</div></div>
+</div>
+</div>
+</section>
+
+<!-- AI TRANSFORMATION -->
 <section>
 <div class="container">
 <div class="section-title">
-<div class="section-label">Featured Work</div>
-<h2>Real projects. Real results.</h2>
-<p>A selection of recent client websites — click any card to see the live site.</p>
+<div class="section-label">AI Transformation</div>
+<h2>Don't just use AI.<br>Learn how to use it well.</h2>
+<p>AI adoption shouldn't start with buying another tool. It should start with understanding where AI can actually create value.</p>
+</div>
+<div class="flow-steps">
+<div class="flow-step reveal"><div class="flow-num">Understand</div><h4>What AI can (and can't) do</h4><p>We help your team understand what AI can and cannot do.</p></div>
+<div class="flow-step reveal" data-delay="1"><div class="flow-num">Identify</div><h4>Where the value is</h4><p>We identify repetitive workflows and processes where AI can create measurable value.</p></div>
+<div class="flow-step reveal" data-delay="2"><div class="flow-num">Educate</div><h4>Practical, not theoretical</h4><p>We deliver seminars and practical workshops tailored to your organisation.</p></div>
+<div class="flow-step reveal" data-delay="3"><div class="flow-num">Automate</div><h4>Put it to work</h4><p>We implement AI-powered workflows and tools.</p></div>
+<div class="flow-step reveal"><div class="flow-num">Improve</div><h4>Keep evolving</h4><p>We monitor, refine and expand the systems as your business evolves.</p></div>
+</div>
+</div>
+</section>
+
+<!-- SELECTED WORK PREVIEW -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title">
+<div class="section-label">Selected Work</div>
+<h2>What we've built — for clients and for ourselves.</h2>
+<p>A selection of recent client solutions. Click any card to see the live site — or view the full portfolio, including our own products.</p>
 </div>
 <div class="work-grid">
 <div class="work-card fade-in" onclick="window.open('https://sprayartistsleicester.com/','_blank')">
@@ -725,7 +899,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 <div class="work-card-body">
 <div class="work-tag">Automotive / Local Business</div>
-<h4>Spray Artists Leicester — Lead Gen Site</h4>
+<h4>Spray Artists Leicester — Client Site</h4>
 <p>Premium dark-theme site for a spray and bodywork business, built to drive local enquiries and showcase quality work.</p>
 <div class="work-metrics">
 <div class="metric"><span>4.9★</span><small>Google rating</small></div>
@@ -771,46 +945,66 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 </div>
 <div style="margin-top:40px;text-align:center">
-<a href="#" onclick="showPage('work')" class="btn btn-secondary">View All Case Studies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('work')" class="btn btn-secondary">View Selected Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
 </section>
 
-<!-- PROCESS -->
-<section style="background:var(--bg2)">
+<!-- HOW WE WORK -->
+<section>
 <div class="container">
 <div class="section-title center">
-<div class="section-label">How It Works</div>
-<h2>Four steps from idea to live.</h2>
-<p>A transparent process with no surprises — just clear milestones and fast delivery.</p>
+<div class="section-label" style="justify-content:center">How We Work</div>
+<h2>From idea to implementation.</h2>
+<p>A technology consulting process, not a fixed web-agency template — because the right solution isn't always the same shape.</p>
 </div>
-<div class="process-steps">
-<div class="process-step fade-in"><div class="num">01</div><h4>Discovery</h4><p>We dig into your goals, audience, and current gaps. 30-minute call, then a tailored proposal.</p></div>
-<div class="process-step fade-in"><div class="num">02</div><h4>Design</h4><p>Full wireframes and visual designs before we write a single line of code. You review and approve.</p></div>
-<div class="process-step fade-in"><div class="num">03</div><h4>Build</h4><p>Development with weekly check-ins. You can review live previews at every stage.</p></div>
-<div class="process-step fade-in"><div class="num">04</div><h4>Launch + Optimise</h4><p>We go live, monitor for 30 days, and fix any issues. You own everything outright.</p></div>
+<div class="process-steps-6">
+<div class="process-step fade-in"><div class="num">01</div><h4>Discover</h4><p>Understand your business, users, problem and objectives.</p></div>
+<div class="process-step fade-in"><div class="num">02</div><h4>Strategise</h4><p>Determine whether the right solution is software, AI, automation, or a combination.</p></div>
+<div class="process-step fade-in"><div class="num">03</div><h4>Design</h4><p>Architect the experience, workflow and technical solution.</p></div>
+<div class="process-step fade-in"><div class="num">04</div><h4>Build</h4><p>Develop the product, integration or system.</p></div>
+<div class="process-step fade-in"><div class="num">05</div><h4>Deploy</h4><p>Launch and integrate it into the real environment.</p></div>
+<div class="process-step fade-in"><div class="num">06</div><h4>Improve</h4><p>Measure, learn and continuously improve.</p></div>
 </div>
 </div>
 </section>
 
 <!-- WHY ORVEXA -->
-<section>
+<section style="background:var(--bg2)">
 <div class="container">
 <div class="why-us-layout">
 <div>
-<div class="section-label">Why Us</div>
-<h2>Built for businesses that care about quality.</h2>
-<p style="margin:16px 0 36px">We're not a template shop or a race-to-the-bottom agency. Every project gets our full attention — and the results show.</p>
-<a href="#" onclick="showPage('about')" class="btn btn-ghost">Meet the team →</a>
+<div class="section-label">Why Orvexa</div>
+<h2>We don't chase technology.<br>We make it useful.</h2>
+<p style="margin:16px 0 36px">We're not a template shop or a race-to-the-bottom agency. Every project — and every product — gets our full attention.</p>
+<a href="#" onclick="showPage('about')" class="btn btn-ghost">Meet Orvexa Labs →</a>
 </div>
 <div class="why-grid">
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Conversion-first design</h4><p style="font-size:.82rem">Every layout decision is made with your business goal in mind.</p></div></div>
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Fast, on-time delivery</h4><p style="font-size:.82rem">We set realistic timelines and meet them — no ghosting.</p></div></div>
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>You own everything</h4><p style="font-size:.82rem">Full code + asset ownership. No lock-in, ever.</p></div></div>
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h4>Clear communication</h4><p style="font-size:.82rem">You'll always know where your project is and what's next.</p></div></div>
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Performance obsessed</h4><p style="font-size:.82rem">Lighthouse 90+ scores as standard. Speed is non-negotiable.</p></div></div>
-<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h4>Scalable foundations</h4><p style="font-size:.82rem">Built to grow with your business, not just for today.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Product mindset</h4><p style="font-size:.82rem">We don't just deliver projects. We think about the product, the users and the outcome.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>AI-native thinking</h4><p style="font-size:.82rem">We actively explore how emerging AI capabilities can solve real problems.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Security-conscious engineering</h4><p style="font-size:.82rem">Technology should not only work. It should be built responsibly, securely and with privacy in mind.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h4>Business-first thinking</h4><p style="font-size:.82rem">We don't recommend technology simply because it's trendy.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Build + educate</h4><p style="font-size:.82rem">We don't just implement AI. We help your team understand and adopt it.</p></div></div>
+<div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h4>Long-term partnership</h4><p style="font-size:.82rem">We help organisations continuously evolve rather than hand over a project and disappear.</p></div></div>
 </div>
+</div>
+</div>
+</section>
+
+<!-- THE LAB -->
+<section id="lab">
+<div class="container">
+<div class="section-title center">
+<div class="section-label" style="justify-content:center">The Lab</div>
+<h2>Where we explore ideas before they become products.</h2>
+</div>
+<div class="lab-grid">
+<div class="lab-card reveal"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div><h4>Artificial Intelligence</h4><p>Exploring how modern AI capabilities can solve real, everyday problems.</p></div>
+<div class="lab-card reveal" data-delay="1"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h4>Automation</h4><p>Designing systems that remove repetitive work from people's days.</p></div>
+<div class="lab-card reveal" data-delay="2"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Cybersecurity</h4><p>Building technology that's secure and privacy-conscious by design.</p></div>
+<div class="lab-card reveal" data-delay="3"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Software Engineering</h4><p>Sharpening how we architect, ship and maintain digital products.</p></div>
+<div class="lab-card reveal"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Emerging Technologies</h4><p>Tracking what's next and figuring out where it becomes useful.</p></div>
+<div class="lab-card reveal" data-delay="1"><div class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><h4>Human-Computer Interaction</h4><p>Designing experiences that feel natural, not just functional.</p></div>
 </div>
 </div>
 </section>
@@ -819,23 +1013,42 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section style="padding:60px 0;background:var(--surface)">
 <div class="container">
 <div class="stats-strip">
-  <div class="stat-item reveal"><div class="stat-num grad-text" data-count="40">40+</div><div class="stat-label">Projects Delivered</div></div>
+  <div class="stat-item reveal"><div class="stat-num grad-text">Building</div><div class="stat-label">Digital products &amp; business technology</div></div>
   <div class="stat-sep"></div>
-  <div class="stat-item reveal" data-delay="1"><div class="stat-num grad-text" data-count="98">98%</div><div class="stat-label">Client Satisfaction</div></div>
+  <div class="stat-item reveal" data-delay="1"><div class="stat-num grad-text">Focused On</div><div class="stat-label">AI · Automation · Software</div></div>
   <div class="stat-sep"></div>
-  <div class="stat-item reveal" data-delay="2"><div class="stat-num grad-text">14d</div><div class="stat-label">Avg. Delivery Time</div></div>
+  <div class="stat-item reveal" data-delay="2"><div class="stat-num grad-text">Based In</div><div class="stat-label">UK · Cameroon</div></div>
   <div class="stat-sep"></div>
-  <div class="stat-item reveal" data-delay="3"><div class="stat-num grad-text" data-count="90">90+</div><div class="stat-label">Lighthouse Score</div></div>
+  <div class="stat-item reveal" data-delay="3"><div class="stat-num grad-text">Vision</div><div class="stat-label">Technology built for what comes next</div></div>
+</div>
+</div>
+</section>
+
+<!-- AI SEMINARS -->
+<section style="background:var(--bg2)">
+<div class="container">
+<div class="section-title">
+<div class="section-label">AI Education</div>
+<h2>Bring your team into the AI era.</h2>
+<p>AI is changing the way organisations work. We help teams understand the technology, identify practical opportunities and begin using AI responsibly in their everyday workflows.</p>
+</div>
+<div class="seminar-grid">
+<div class="seminar-card reveal"><div class="num">01</div><h4>AI Awareness Seminars</h4><p>For employees and leadership teams who need to understand the AI landscape.</p></div>
+<div class="seminar-card reveal" data-delay="1"><div class="num">02</div><h4>Practical AI Workshops</h4><p>Hands-on sessions showing teams how AI can improve real workflows.</p></div>
+<div class="seminar-card reveal" data-delay="2"><div class="num">03</div><h4>AI Workflow Audits</h4><p>We examine repetitive processes and identify opportunities for automation.</p></div>
+</div>
+<div style="margin-top:40px">
+<a href="#" onclick="showPage('contact')" class="btn btn-primary">Talk to Us About an AI Session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section style="background:var(--bg2)">
+<section>
 <div class="container">
 <div class="section-title center">
-<div class="section-label">Testimonials</div>
-<h2>What clients actually say.</h2>
+<div class="section-label" style="justify-content:center">Testimonials</div>
+<h2>What clients say about our work.</h2>
 </div>
 <div class="testi-grid">
 <div class="testi-card"><div class="testi-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="testi-text">"The website Orvexa built for us completely changed how we show up online. We went from barely any enquiries through our site to getting calls every week. The dark premium look is exactly what I had in mind — professional and sharp."</p><div class="testi-author"><div class="testi-avatar">AL</div><div><div class="testi-name">Ali</div><div class="testi-role">CEO, Spray Artists Leicester</div></div></div></div>
@@ -849,7 +1062,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </section>
 
 <!-- FAQ -->
-<section>
+<section style="background:var(--bg2)">
 <div class="container">
 <div class="section-title">
 <div class="section-label">FAQ</div>
@@ -857,14 +1070,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 <div class="container-sm" style="padding:0">
 <div class="faq-list">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does a typical website project take?<span class="icon">+</span></div><div class="faq-a">Landing pages typically take 7–10 business days. Multi-page business sites take 3–5 weeks. Ecommerce and custom builds vary from 5–10 weeks depending on complexity. We'll give you an accurate timeline in the proposal.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I own the website and code after launch?<span class="icon">+</span></div><div class="faq-a">Yes, 100%. Once the project is paid in full, all code, design files, and assets transfer to you. No lock-in, no ongoing fees unless you choose a maintenance retainer.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many revisions are included?<span class="icon">+</span></div><div class="faq-a">Every project includes two rounds of revisions at the design stage and one round post-development. Additional revisions are available at a flat hourly rate.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the payment structure?<span class="icon">+</span></div><div class="faq-a">We typically work on a 50/50 split — 50% upfront to begin, 50% on delivery. For larger projects, a three-stage milestone structure is available.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What platforms do you build on?<span class="icon">+</span></div><div class="faq-a">We build on platforms best suited to the project: custom code (HTML/CSS/JS), WordPress, Webflow, Shopify, or Next.js for advanced builds. We'll recommend the right one during the discovery call.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the AI Call Assistant — and how does it work?<span class="icon">+</span></div><div class="faq-a">The AI Call Assistant is a voice-based assistant that answers calls on your behalf when you're unavailable. It can answer common questions about your business, collect caller details, and book appointments. Setup takes 1–2 days and no technical knowledge is required on your end.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer ongoing support after launch?<span class="icon">+</span></div><div class="faq-a">Yes. We offer optional monthly maintenance retainers that cover updates, performance monitoring, and content changes. Details are in the proposal stage.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get SEO included?<span class="icon">+</span></div><div class="faq-a">All projects include technical SEO foundations: clean markup, meta tags, sitemap, and page speed optimisation. Ongoing SEO campaigns are available as a separate add-on service.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does Orvexa Labs actually do?<span class="icon">+</span></div><div class="faq-a">We're a technology company. We build our own digital products, like OverCome, and we help other businesses build software, integrate AI, and automate their workflows.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is OverCome available to use right now?<span class="icon">+</span></div><div class="faq-a">Not yet. OverCome is currently in development. We'll share more as it gets closer to release — for now you can follow its progress on the Products page.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you only work with businesses?<span class="icon">+</span></div><div class="faq-a">Most of our service work is with businesses, but we're always open to interesting projects and conversations — reach out and tell us what you're building.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if I don't know exactly what technology I need?<span class="icon">+</span></div><div class="faq-a">That's normal, and exactly what the discovery call is for. We start with your problem, not a pre-built package, and help you figure out whether the right answer is a website, an app, AI, automation, or something else entirely.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I own what you build for me?<span class="icon">+</span></div><div class="faq-a">Yes. Once a project is paid in full, all code, design files and assets transfer to you. No lock-in.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">We've never used AI in our business — where do we start?<span class="icon">+</span></div><div class="faq-a">Usually with an AI awareness seminar or a workflow audit. We help you understand what's realistic before recommending anything to build.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the difference between a project and an AI workshop?<span class="icon">+</span></div><div class="faq-a">A project is something we build for you. A workshop or seminar is us teaching your team how to think about and use AI — the two often work well together.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer ongoing support after launch?<span class="icon">+</span></div><div class="faq-a">Yes. We offer optional support arrangements that cover updates, monitoring and improvements after launch — details are worked out during scoping.</div></div>
 </div>
 </div>
 </div>
@@ -875,10 +1088,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="container">
 <div class="cta-block">
 <div class="section-label" style="justify-content:center;margin-bottom:20px">Let's Work Together</div>
-<h2>Ready to build something<br><span class="grad-text">worth showing off?</span></h2>
-<p>Book a free 30-minute discovery call. No pressure, no pitch — just an honest conversation about what you need.</p>
+<h2>Ready to build<br><span class="grad-text">what's next?</span></h2>
+<p>Whether it's a product idea, a business problem, or a team that needs to understand AI — let's talk.</p>
 <div class="cta-btns">
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 <a href="#" onclick="showPage('contact')" class="btn btn-secondary">Send a Message</a>
 </div>
 </div>
@@ -887,71 +1100,230 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 </div><!-- /page-home -->
 
+<!-- ===== PRODUCTS PAGE ===== -->
+<div class="page" id="page-products">
+<div style="padding:140px 0 0">
+<div class="container">
+<div class="section-label">Products</div>
+<h1 style="margin-bottom:16px">What we're <span class="grad-text">building</span>.</h1>
+<p style="font-size:1.1rem;max-width:560px;margin-bottom:20px">Orvexa Labs builds its own technology alongside the work we do for clients. OverCome is the first product carrying that vision.</p>
+
+<div class="product-feature reveal" style="margin-top:40px">
+<div>
+<div class="product-badge">Orvexa Labs Product</div>
+<h2 style="margin-bottom:16px">OverCome</h2>
+<div class="product-status">Currently in development</div>
+<p style="margin-bottom:0">An AI-powered behaviour-change companion designed to help people understand their patterns, navigate difficult moments and regain control of their attention and habits.</p>
+<div class="product-feature-list">
+<div class="product-feature-item">AI-powered coaching</div>
+<div class="product-feature-item">Personalised behavioural insights</div>
+<div class="product-feature-item">Daily check-ins</div>
+<div class="product-feature-item">Journaling</div>
+<div class="product-feature-item">In-the-moment support</div>
+<div class="product-feature-item">Privacy-conscious architecture</div>
+</div>
+<a href="#" onclick="showPage('contact')" class="btn btn-primary">Get Notified at Launch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<div class="built-by">Built by <strong>Orvexa Labs</strong></div>
+</div>
+<div class="product-visual">
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar"></div></div>
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar" style="width:70%"></div></div>
+<div class="product-visual-row"><div class="product-visual-dot"></div><div class="product-visual-bar" style="width:40%"></div></div>
+<div style="position:relative;text-align:center;margin-top:8px"><span style="display:inline-block;background:rgba(108,59,255,0.12);border:1px solid rgba(108,59,255,0.3);border-radius:100px;padding:6px 16px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p3)">Coming Soon</span></div>
+</div>
+</div>
+
+<div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r)">
+<h4 style="margin-bottom:10px">Our product philosophy</h4>
+<p style="font-size:.92rem;margin-bottom:0">OverCome isn't designed to be a streak counter. Streaks are easy to build and easy to break — and breaking one is often what sends people further into the behaviour they're trying to change. Instead, the MVP is built around the moment that actually matters: the immediate craving. That's where AI coaching, journaling and in-the-moment support are focused first — helping someone get through the next five minutes, not just count the days.</p>
+</div>
+
+<div style="margin-top:60px;text-align:center;padding-bottom:40px">
+<h3 style="margin-bottom:12px">More products are on the way.</h3>
+<p style="max-width:480px;margin:0 auto 24px">OverCome is the first product to come out of <a href="#" onclick="goHome('lab')" style="color:var(--p3)">The Lab</a> — our space for exploring AI, automation, cybersecurity and emerging technology before it becomes a product.</p>
+<a href="#" onclick="goHome('lab')" class="btn btn-secondary">Visit The Lab →</a>
+</div>
+</div>
+</div>
+
+<section style="padding-bottom:100px">
+<div class="container">
+<div class="cta-block">
+<h2>Have a product idea of your own?</h2>
+<p>We help founders and businesses turn early ideas into working MVPs.</p>
+<div class="cta-btns">
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+</div><!-- /page-products -->
+
 <!-- ===== SERVICES PAGE ===== -->
 <div class="page" id="page-services">
 <div style="padding:140px 0 0">
 <div class="container">
 <div class="section-label">Services</div>
-<h1 style="margin-bottom:16px">What we <span class="grad-text">build</span>.</h1>
-<p style="font-size:1.1rem;max-width:520px;margin-bottom:80px">Two focused services. No filler. Everything we do is designed to make your business more visible, more credible, and more profitable.</p>
+<h1 style="margin-bottom:16px">Technology, <span class="grad-text">built around your goals</span>.</h1>
+<p style="font-size:1.1rem;max-width:560px;margin-bottom:80px">Whether you need to build something new, modernise an existing system or figure out where AI fits into your business, we work with you from idea to implementation.</p>
 
-<!-- Service 1 -->
+<!-- 01 Web Development -->
 <div class="service-detail">
-<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">01 — Core Service</div>
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">01 — Web Development</div>
 <div class="service-detail-header">
 <div>
-<h2 style="margin-bottom:16px">Web Design &amp; Development</h2>
-<p style="margin-bottom:20px">We design and build websites that balance premium aesthetics with hard conversion mechanics. Every pixel is intentional. Every page has a job to do.</p>
-<p>Whether you need a single landing page or a full multi-page site, we approach every project with the same rigour: clear goals, thoughtful design, clean code.</p>
+<h2 style="margin-bottom:16px">Websites &amp; web applications.</h2>
+<p style="margin-bottom:20px">We design and build websites and web applications that balance premium design with real technical performance — from business sites to full SaaS platforms.</p>
+<p>Every build starts with your goal, not a template.</p>
 </div>
 <div>
-<h4 style="margin-bottom:16px">What's included</h4>
+<h4 style="margin-bottom:16px">What we build</h4>
 <div class="deliverables-grid">
-<div class="deliverable">UI/UX Design</div>
-<div class="deliverable">Full development</div>
-<div class="deliverable">Mobile-responsive</div>
-<div class="deliverable">SEO foundations</div>
-<div class="deliverable">Performance tuning</div>
-<div class="deliverable">Analytics setup</div>
-<div class="deliverable">2 design revisions</div>
+<div class="deliverable">Business websites</div>
+<div class="deliverable">Web applications</div>
+<div class="deliverable">SaaS platforms</div>
+<div class="deliverable">Landing pages</div>
+<div class="deliverable">E-commerce</div>
+<div class="deliverable">Custom dashboards</div>
+<div class="deliverable">API integrations</div>
 <div class="deliverable">Full ownership</div>
 </div>
 </div>
 </div>
-<div class="services-type-grid">
-<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Landing Pages</h4><p style="font-size:.85rem">High-converting single-page sites for campaigns, products, or lead generation.</p></div>
-<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Business Websites</h4><p style="font-size:.85rem">Multi-page sites built to establish credibility and generate qualified enquiries.</p></div>
-<div style="padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><h4 style="margin-bottom:6px;font-size:.95rem">Redesigns</h4><p style="font-size:.85rem">Lift your existing site out of 2018 and into a design that matches your ambitions.</p></div>
-</div>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Web Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 
 <div class="section-divider" style="margin:60px 0"></div>
 
-<!-- Service 2 -->
+<!-- 02 Mobile App Development -->
 <div class="service-detail">
-<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">02 — Add-on Service</div>
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">02 — Mobile App Development</div>
 <div class="service-detail-header">
 <div>
-<h2 style="margin-bottom:16px">AI Call Assistants</h2>
-<p style="margin-bottom:20px">Your business doesn't stop taking calls at 5pm — but you do. Our AI call assistants handle inbound calls outside business hours so you never miss a lead.</p>
-<p>No robotic scripts. No awkward silences. A professional, natural voice that represents your brand and captures what matters.</p>
+<h2 style="margin-bottom:16px">Native &amp; cross-platform apps.</h2>
+<p style="margin-bottom:20px">We build mobile apps — from early MVPs to fully-featured products — with the same product thinking behind our own app, OverCome.</p>
+<p>We work with you from prototype through to a real, working app in people's hands.</p>
 </div>
 <div>
-<h4 style="margin-bottom:16px">What it does</h4>
-<div style="display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📞</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Answers calls after hours</strong><p style="font-size:.82rem">Picks up when you can't, 24/7 if needed.</p></div></div>
-<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">💬</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Handles common FAQs</strong><p style="font-size:.82rem">Trained on your business info — hours, pricing, services, location.</p></div></div>
-<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📋</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Captures lead details</strong><p style="font-size:.82rem">Name, number, reason for call — delivered to your inbox.</p></div></div>
-<div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)"><div style="flex-shrink:0;font-size:1.2rem">📅</div><div><strong style="font-size:.9rem;display:block;margin-bottom:3px">Books appointments</strong><p style="font-size:.82rem">Can schedule directly into your calendar system.</p></div></div>
+<h4 style="margin-bottom:16px">What we build</h4>
+<div class="deliverables-grid">
+<div class="deliverable">iOS applications</div>
+<div class="deliverable">Android applications</div>
+<div class="deliverable">Cross-platform apps</div>
+<div class="deliverable">MVP development</div>
+<div class="deliverable">Product prototyping</div>
+<div class="deliverable">Backend integration</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-divider" style="margin:60px 0"></div>
+
+<!-- 03 AI Integration -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">03 — AI Integration</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">AI that solves a real problem.</h2>
+<p style="margin-bottom:20px">We integrate AI into the tools your business already uses — or build new AI-powered experiences from scratch.</p>
+<p>The goal is always the same: AI that solves a real problem, not AI for its own sake.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What we build</h4>
+<div class="deliverables-grid">
+<div class="deliverable">AI assistants</div>
+<div class="deliverable">AI-powered applications</div>
+<div class="deliverable">LLM integration</div>
+<div class="deliverable">AI chat systems</div>
+<div class="deliverable">AI knowledge bases</div>
+<div class="deliverable">AI workflow integration</div>
+<div class="deliverable">Document processing</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-divider" style="margin:60px 0"></div>
+
+<!-- 04 Business Automation -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">04 — Business Automation</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">Take the manual work off your plate.</h2>
+<p style="margin-bottom:20px">We find the repetitive, manual work slowing your team down — and build systems that take it off their plate.</p>
+<p>Automation should feel invisible. You shouldn't have to think about it once it's running.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What we build</h4>
+<div class="deliverables-grid">
+<div class="deliverable">Workflow automation</div>
+<div class="deliverable">Internal tools</div>
+<div class="deliverable">Lead automation</div>
+<div class="deliverable">Support automation</div>
+<div class="deliverable">Data processing</div>
+<div class="deliverable">CRM integrations</div>
+<div class="deliverable">API-based automation</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-divider" style="margin:60px 0"></div>
+
+<!-- 05 Custom Software -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(108,59,255,0.1);border:1px solid rgba(108,59,255,0.25);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">05 — Custom Software</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">When off-the-shelf isn't enough.</h2>
+<p style="margin-bottom:20px">When existing tools aren't enough, we build the system you actually need.</p>
+<p>This is where most of our more complex, long-term partnerships live.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What we build</h4>
+<div class="deliverables-grid">
+<div class="deliverable">Internal platforms</div>
+<div class="deliverable">Custom dashboards</div>
+<div class="deliverable">Business management systems</div>
+<div class="deliverable">Specialised software</div>
+<div class="deliverable">API ecosystems</div>
+<div class="deliverable">Digital infrastructure</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-divider" style="margin:60px 0"></div>
+
+<!-- 06 AI Education & Business Transformation -->
+<div class="service-detail">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);border-radius:100px;padding:6px 16px;font-size:.8rem;font-weight:700;color:var(--p3);margin-bottom:28px;letter-spacing:.06em;text-transform:uppercase">06 — AI Education &amp; Business Transformation</div>
+<div class="service-detail-header">
+<div>
+<h2 style="margin-bottom:16px">AI Education &amp; Business Transformation.</h2>
+<p style="margin-bottom:20px">AI is changing how businesses operate. We help teams understand what is changing, identify where AI can create value, and begin implementing practical solutions into their workflows.</p>
+<p>This is a serious offering for organisations, not a generic online course.</p>
+</div>
+<div>
+<h4 style="margin-bottom:16px">What's included</h4>
+<div class="deliverables-grid">
+<div class="deliverable">AI awareness seminars</div>
+<div class="deliverable">AI workshops</div>
+<div class="deliverable">Employee education</div>
+<div class="deliverable">Productivity training</div>
+<div class="deliverable">Workflow audits</div>
+<div class="deliverable">Automation strategy</div>
+<div class="deliverable">AI adoption roadmaps</div>
+<div class="deliverable">Implementation support</div>
 </div>
 </div>
 </div>
 <div style="background:rgba(108,59,255,0.06);border:1px solid rgba(108,59,255,0.15);border-radius:var(--r);padding:28px;margin-bottom:32px">
-<h4 style="margin-bottom:12px">Is it right for your business?</h4>
-<p style="font-size:.9rem">AI Call Assistants work best for service businesses, trades, clinics, law firms, agencies, and any business that regularly misses calls outside business hours. Setup takes 1–2 days. No technical expertise required.</p>
+<h4 style="margin-bottom:12px">Is it right for your organisation?</h4>
+<p style="font-size:.9rem">This works best for teams and leadership groups who know AI matters but aren't sure where to start. We meet you at that starting point — no jargon, no hype, just a practical path forward.</p>
 </div>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Ask About AI Call Assistants <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('contact')" class="btn btn-primary">Bring AI Into Your Business <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 
 </div>
@@ -961,7 +1333,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section style="padding-bottom:100px">
 <div class="container">
 <div class="cta-block">
-<h2>Not sure which service you need?</h2>
+<h2>Not sure what you need yet?</h2>
 <p>Book a free call and we'll give you an honest recommendation — even if that's something we don't offer.</p>
 <div class="cta-btns">
 <a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -976,9 +1348,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="page" id="page-work">
 <div style="padding:140px 0 0">
 <div class="container">
-<div class="section-label">Case Studies</div>
-<h1 style="margin-bottom:16px">Work that <span class="grad-text">performs</span>.</h1>
-<p style="font-size:1.1rem;max-width:520px;margin-bottom:48px">Every project here is a real business problem solved with design and development. Numbers are real.</p>
+<div class="section-label">Selected Work</div>
+<h1 style="margin-bottom:16px">What we've <span class="grad-text">built</span>.</h1>
+<p style="font-size:1.1rem;max-width:560px;margin-bottom:20px">The portfolio below shows two sides of Orvexa Labs: solutions we've delivered for clients, and products we're building for ourselves.</p>
+
+<div class="work-split-label"><h3>Client Solutions</h3><div class="line"></div></div>
 <div class="filter-tabs">
 <button class="filter-tab active" onclick="filterWork(this,'all')">All</button>
 <button class="filter-tab" onclick="filterWork(this,'automotive')">Automotive</button>
@@ -1019,13 +1393,22 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 
 </div>
+
+<div class="work-split-label"><h3>Orvexa Products</h3><div class="line"></div></div>
+<div class="work-grid" style="margin-bottom:60px">
+<div class="work-card" onclick="showPage('products')">
+<div class="work-card-img"><div class="mock">OverCome</div></div>
+<div class="work-card-body"><div class="work-tag">Orvexa Labs Product</div><h4>OverCome — AI Behaviour-Change Companion</h4><p>An AI-powered companion helping people regain control of their attention, habits and behaviour. Currently in development.</p><div class="work-metrics"><div class="metric"><span>AI</span><small>Coaching</small></div><div class="metric"><span>Private</span><small>By design</small></div><div class="metric"><span>Soon</span><small>Coming</small></div></div><a class="work-visit" href="#" onclick="event.stopPropagation();showPage('products')">Explore OverCome ↗</a></div>
+</div>
 </div>
 
-<section style="padding-top:80px;padding-bottom:100px">
+</div>
+
+<section style="padding-top:20px;padding-bottom:100px">
 <div class="container">
 <div class="cta-block">
 <h2>Want results like these?</h2>
-<p>Most projects launch within 3–5 weeks. Let's talk about yours.</p>
+<p>Every project starts with a conversation about what you're actually trying to achieve.</p>
 <div class="cta-btns">
 <a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 <a href="#" onclick="showPage('contact')" class="btn btn-secondary">Get a Quote</a>
@@ -1042,61 +1425,18 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="container">
 <div class="section-title center">
 <div class="section-label" style="justify-content:center">Pricing</div>
-<h1 style="margin-bottom:16px">Transparent <span class="grad-text">pricing</span>.</h1>
-<p style="font-size:1.05rem;margin:0 auto;max-width:520px">No hidden fees, no awkward surprises. Every project starts with a scoping call so you know exactly what you're getting.</p>
+<h1 style="margin-bottom:16px">Let's scope <span class="grad-text">the right solution</span>.</h1>
+<p style="font-size:1.05rem;margin:0 auto;max-width:560px">Every technology project is different. Instead of forcing your requirements into a package, we start by understanding the problem and designing the right solution.</p>
 </div>
 
-<div class="pricing-grid" style="margin-top:60px">
-<div class="pricing-card">
-<div class="tag tag-primary">Starter</div>
-<h3>Landing Page<br>or Small Site</h3>
-<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£899<span> GBP</span></div></div>
-<p style="font-size:.88rem;margin-bottom:0">For new businesses, campaigns, or anyone who needs a sharp online presence fast.</p>
-<div class="pricing-includes">
-<div class="pi">1–3 page website or landing page</div>
-<div class="pi">Custom UI/UX design</div>
-<div class="pi">Mobile responsive</div>
-<div class="pi">Contact / lead form</div>
-<div class="pi">Basic SEO setup</div>
-<div class="pi">2 revision rounds</div>
-<div class="pi">Delivery: 7–14 days</div>
-</div>
-<a href="#" onclick="showPage('book')" class="btn btn-secondary" style="width:100%;justify-content:center">Get Started</a>
-</div>
-<div class="pricing-card featured">
-<div class="tag tag-primary">Growth</div>
-<h3>Multi-page<br>Business Site</h3>
-<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£2,500<span> GBP</span></div></div>
-<p style="font-size:.88rem;margin-bottom:0">For established businesses ready to treat their website as a growth channel.</p>
-<div class="pricing-includes">
-<div class="pi">5–10 page website</div>
-<div class="pi">Custom UI/UX design system</div>
-<div class="pi">Blog / CMS integration</div>
-<div class="pi">Full SEO foundations</div>
-<div class="pi">Analytics + tracking setup</div>
-<div class="pi">Performance optimisation</div>
-<div class="pi">3 revision rounds</div>
-<div class="pi">Delivery: 3–5 weeks</div>
-</div>
-<a href="#" onclick="showPage('book')" class="btn btn-primary" style="width:100%;justify-content:center">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</div>
-<div class="pricing-card">
-<div class="tag tag-secondary">Elite</div>
-<h3>Ecommerce or<br>Custom Build</h3>
-<div class="pricing-price"><span class="from">Starting from</span><div class="amount">£3,500<span> GBP</span></div></div>
-<p style="font-size:.88rem;margin-bottom:0">For complex builds where performance, scale, and UX are all non-negotiable.</p>
-<div class="pricing-includes">
-<div class="pi">Ecommerce / custom web app</div>
-<div class="pi">Full design system</div>
-<div class="pi">Advanced integrations</div>
-<div class="pi">Checkout / funnel optimisation</div>
-<div class="pi">Custom CMS / admin</div>
-<div class="pi">Ongoing support option</div>
-<div class="pi">Dedicated project manager</div>
-<div class="pi">Timeline: scoped per project</div>
-</div>
-<a href="#" onclick="showPage('book')" class="btn btn-secondary" style="width:100%;justify-content:center">Get a Quote</a>
-</div>
+<div class="build-grid" style="margin-top:20px">
+<div class="build-item"><h4>Product Development</h4><p>New digital products, from early concept through to a working MVP.</p></div>
+<div class="build-item"><h4>Web Development</h4><p>Business websites, web apps, SaaS platforms and e-commerce.</p></div>
+<div class="build-item"><h4>Mobile Development</h4><p>iOS, Android and cross-platform applications.</p></div>
+<div class="build-item"><h4>AI Integration</h4><p>AI assistants, LLM integration and AI-powered features.</p></div>
+<div class="build-item"><h4>Automation</h4><p>Workflow automation, internal tools and system integrations.</p></div>
+<div class="build-item"><h4>Custom Software</h4><p>Internal platforms and specialised business systems.</p></div>
+<div class="build-item"><h4>AI Education &amp; Workshops</h4><p>Seminars, hands-on training and workflow audits for your team.</p></div>
 </div>
 
 <div class="pricing-divider"></div>
@@ -1107,19 +1447,19 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <p>Every project is different. Here's what moves the number up or down.</p>
 </div>
 <div class="what-affects" style="margin-top:40px">
-<div class="affect-item"><h4>Number of pages</h4><p>More pages means more design and development work. We scope every page individually.</p></div>
-<div class="affect-item"><h4>Custom functionality</h4><p>Booking systems, calculators, integrations, and custom user flows all add scope.</p></div>
-<div class="affect-item"><h4>Design complexity</h4><p>Heavily animated or illustration-heavy designs require more time than clean, minimal builds.</p></div>
-<div class="affect-item"><h4>Content readiness</h4><p>If you provide copy and images, we move faster. If you need copywriting, we can source it — for a fee.</p></div>
-<div class="affect-item"><h4>Timeline pressure</h4><p>Rush projects (under 2 weeks) carry a 20–30% urgency premium.</p></div>
-<div class="affect-item"><h4>Platform choice</h4><p>Custom code builds take longer than templated platforms, but offer more flexibility and no monthly fees.</p></div>
+<div class="affect-item"><h4>Scope &amp; complexity</h4><p>A landing page and a custom AI-integrated platform are different conversations. We scope every project individually.</p></div>
+<div class="affect-item"><h4>Integrations required</h4><p>Connecting to existing systems, APIs and third-party tools adds engineering time.</p></div>
+<div class="affect-item"><h4>Design &amp; UX depth</h4><p>Heavily custom, animation-rich experiences take longer than clean, functional builds.</p></div>
+<div class="affect-item"><h4>Data &amp; content readiness</h4><p>If you provide clean data, copy and assets, we move faster.</p></div>
+<div class="affect-item"><h4>Timeline pressure</h4><p>Rush timelines carry a premium — we'll always tell you upfront.</p></div>
+<div class="affect-item"><h4>Technology choice</h4><p>Custom-built systems take longer than templated platforms, but offer more flexibility long-term.</p></div>
 </div>
 
 <div class="cta-block" style="margin-top:80px;margin-bottom:80px">
-<h2>Not sure which tier fits?</h2>
-<p>Tell us what you need on a 30-minute call. We'll give you an honest scoping, not a upsell.</p>
+<h2>Not sure where to start?</h2>
+<p>Tell us what you're trying to achieve on a 30-minute call. We'll give you an honest scoping, not an upsell.</p>
 <div class="cta-btns">
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
 
@@ -1132,8 +1472,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="about-hero">
 <div class="container">
 <div class="section-label" style="justify-content:center">About Orvexa Labs</div>
-<h1>Built to build <span class="grad-text">better</span>.</h1>
-<p>We started Orvexa Labs because too many businesses were stuck with websites that looked average and converted worse. We decided to fix that.</p>
+<h1>We are building <span class="grad-text">more than an agency</span>.</h1>
+<p>Orvexa Labs was created with a simple belief: technology should do more than look impressive. It should solve problems, create opportunities and make people and businesses more capable.</p>
 </div>
 </div>
 
@@ -1143,18 +1483,18 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div>
 <div class="section-label">Our Story</div>
 <h2 style="margin-bottom:20px">Why we exist.</h2>
-<p style="margin-bottom:16px">Most web agencies sell templates dressed up as custom work, take six months to deliver, and disappear the moment you need changes. We built Orvexa as the antidote to that.</p>
-<p style="margin-bottom:16px">We're a lean, focused team of designers and developers who work on a small number of projects at a time. That means your project gets proper attention — not an overworked junior managing it between twelve other builds.</p>
-<p>We're based in the UK but work with clients globally. If your goals are serious, we're the right team.</p>
+<p style="margin-bottom:16px">We build our own products while working with businesses to develop software, integrate AI and automate workflows. Two sides of the same belief: technology should be built with intention, not just delivered as a checklist.</p>
+<p style="margin-bottom:16px">We're a small, focused team — which means every project and every product gets real attention, not an overworked junior juggling it between a dozen others.</p>
+<p>We work with clients globally, with roots in the UK and long-term ambitions in Cameroon.</p>
 </div>
 <div style="background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:40px">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px">
-<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">40+</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Projects delivered</div></div>
-<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">98%</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Client satisfaction</div></div>
-<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">14d</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Avg. landing page delivery</div></div>
-<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">UK</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Based, worldwide clients</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Building</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Products &amp; client technology</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI · Automation · Software</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Where we focus</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">UK · Cameroon</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">Where we're rooted</div></div>
+<div style="text-align:center;padding:20px;background:var(--bg);border-radius:var(--r-sm)"><div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Long-Term</div><div style="font-size:.85rem;color:var(--text3);margin-top:4px">How we think about partnership</div></div>
 </div>
-<p style="font-size:.88rem;text-align:center;color:var(--text3)">Real numbers. No fluff.</p>
+<p style="font-size:.88rem;text-align:center;color:var(--text3)">This is where we are. Here's where we're going.</p>
 </div>
 </div>
 </div>
@@ -1163,23 +1503,36 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section style="background:var(--bg2)">
 <div class="container">
 <div class="section-title center">
-<div class="section-label">Our Values</div>
+<div class="section-label" style="justify-content:center">Our Values</div>
 <h2>How we operate.</h2>
 </div>
 <div class="values-list" style="max-width:720px;margin:48px auto 0">
-<div class="value-item"><h4>Quality over quantity</h4><p>We take on fewer projects so we can focus more on each one. If we can't do it properly, we'll say so.</p></div>
-<div class="value-item"><h4>Honest communication</h4><p>We tell you what you need to hear, not what you want to hear. If something isn't working, we'll flag it early.</p></div>
-<div class="value-item"><h4>Outcomes, not outputs</h4><p>Shipping a website isn't the goal. Your business growing because of that website — that's the goal.</p></div>
-<div class="value-item"><h4>No lock-in</h4><p>You own everything we build. No retainer traps, no platform dependencies you didn't agree to.</p></div>
+<div class="value-item"><h4>Product mindset over project mindset</h4><p>We think about outcomes and users, not just deliverables. If we can't do it properly, we'll say so.</p></div>
+<div class="value-item"><h4>Honest communication</h4><p>We tell you what you need to hear — including where we are today and where we're still growing.</p></div>
+<div class="value-item"><h4>Build and educate</h4><p>We don't just hand over technology. We help people and teams understand it.</p></div>
+<div class="value-item"><h4>No lock-in</h4><p>You own what we build for you. No retainer traps, no platform dependencies you didn't agree to.</p></div>
 </div>
 </div>
 </section>
 
-<section style="padding-bottom:100px">
+<section>
+<div class="container">
+<div class="section-title center">
+<div class="section-label" style="justify-content:center">Global Ambition</div>
+<h2>Built with global ambition.</h2>
+</div>
+<div class="container-sm" style="padding:0;text-align:center">
+<p style="font-size:1.05rem;margin-bottom:20px">Starting from a global perspective and with roots in Cameroon, Orvexa Labs aims to contribute to the next generation of technology businesses emerging from Africa.</p>
+<p style="font-size:1.05rem">Our long-term ambition is to establish Orvexa Labs in Cameroon as an innovative technology enterprise — delivering software, AI solutions, automation and technology education to businesses and organisations.</p>
+</div>
+</div>
+</section>
+
+<section style="padding-bottom:100px;background:var(--bg2)">
 <div class="container">
 <div class="cta-block">
 <h2>Let's build something together.</h2>
-<p>A 30-minute call is all it takes to get started.</p>
+<p>A 30-minute call is all it takes to get started — on a project, a product idea, or bringing AI into your team.</p>
 <div class="cta-btns">
 <a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
@@ -1195,7 +1548,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="contact-layout">
 <div class="contact-info">
 <div class="section-label">Get in Touch</div>
-<h2 style="margin-bottom:16px">Let's talk<br>about your project.</h2>
+<h2 style="margin-bottom:16px">Let's talk<br>about what you're building.</h2>
 <p>Fill in the form and we'll get back to you within one business day.</p>
 <div style="margin-top:36px">
 <div class="contact-detail">
@@ -1221,12 +1574,26 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="form-group"><label>Your name *</label><input type="text" id="cf-name" placeholder="Jane Smith"/></div>
 <div class="form-group"><label>Email address *</label><input type="email" id="cf-email" placeholder="jane@company.com"/></div>
 </div>
-<div class="form-group"><label>Business name</label><input type="text" id="cf-biz" placeholder="Acme Ltd."/></div>
+<div class="form-group"><label>Organisation / Business</label><input type="text" id="cf-biz" placeholder="Acme Ltd."/></div>
+<div class="form-group"><label>What can we help you with?</label>
+<div class="pill-group" id="cf-help">
+<span class="pill-check" data-value="Website">Website</span>
+<span class="pill-check" data-value="Web Application">Web Application</span>
+<span class="pill-check" data-value="Mobile Application">Mobile Application</span>
+<span class="pill-check" data-value="AI Integration">AI Integration</span>
+<span class="pill-check" data-value="Business Automation">Business Automation</span>
+<span class="pill-check" data-value="Custom Software">Custom Software</span>
+<span class="pill-check" data-value="AI Training / Seminar">AI Training / Seminar</span>
+<span class="pill-check" data-value="Digital Transformation">Digital Transformation</span>
+<span class="pill-check" data-value="Product Development">Product Development</span>
+<span class="pill-check" data-value="Other">Other</span>
+</div>
+</div>
 <div class="form-row">
-<div class="form-group"><label>Budget range</label><select id="cf-budget"><option value="">Select range</option><option>Under £1,000</option><option>£1,000 – £2,500</option><option>£2,500 – £5,000</option><option>£5,000 – £10,000</option><option>£10,000+</option></select></div>
+<div class="form-group"><label>Budget range (optional)</label><select id="cf-budget"><option value="">Select range</option><option>Under £1,000</option><option>£1,000 – £2,500</option><option>£2,500 – £5,000</option><option>£5,000 – £10,000</option><option>£10,000+</option></select></div>
 <div class="form-group"><label>Timeline</label><select id="cf-timeline"><option value="">How soon?</option><option>ASAP (under 2 weeks)</option><option>1 month</option><option>1–3 months</option><option>No rush — planning ahead</option></select></div>
 </div>
-<div class="form-group"><label>Tell us about the project *</label><textarea id="cf-msg" placeholder="What are you building? What's the goal? Any context helps."></textarea></div>
+<div class="form-group"><label>Tell us about the challenge *</label><textarea id="cf-msg" placeholder="What are you trying to build, automate, improve or solve?"></textarea></div>
 <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitForm()">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 <div class="form-success" id="formSuccess">
@@ -1244,17 +1611,17 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="page" id="page-book">
 <div style="padding:140px 0 100px">
 <div class="container">
-<div class="section-label">Book a Call</div>
-<h1 style="margin-bottom:16px">Free 30-minute<br><span class="grad-text">Discovery Call</span>.</h1>
-<p style="font-size:1.1rem;max-width:520px;margin-bottom:60px">No pitch. No hard sell. Just a straight conversation about your goals and whether we're the right fit.</p>
+<div class="section-label">Technology Discovery Call</div>
+<h1 style="margin-bottom:16px">Let's talk about<br><span class="grad-text">what you're building</span>.</h1>
+<p style="font-size:1.1rem;max-width:560px;margin-bottom:60px">Whether you have a fully defined project or simply a problem you think technology could solve, let's talk. No pitch, no hard sell — just a straight conversation about your goals and whether we're the right fit.</p>
 <div class="book-layout">
 <div>
 <h3 style="margin-bottom:8px">What to expect</h3>
 <p style="margin-bottom:32px;font-size:.9rem">A focused, 30-minute conversation — not a discovery marathon.</p>
 <div class="expect-list">
-<div class="expect-item"><div class="expect-num">01</div><div><h4>Understand your goals</h4><p>We'll ask about your business, what you're trying to achieve, and what's blocking you right now.</p></div></div>
-<div class="expect-item"><div class="expect-num">02</div><div><h4>Review your current situation</h4><p>If you have an existing site or brand, we'll give you an honest quick-take. No charge, no strings.</p></div></div>
-<div class="expect-item"><div class="expect-num">03</div><div><h4>Outline an approach</h4><p>We'll sketch out what a project might look like — timeline, rough budget range, platform suggestions.</p></div></div>
+<div class="expect-item"><div class="expect-num">01</div><div><h4>Understand your goals</h4><p>We'll ask about your business, your idea, what you're trying to achieve, and what's blocking you right now.</p></div></div>
+<div class="expect-item"><div class="expect-num">02</div><div><h4>Review your current situation</h4><p>If you have existing systems, a site or a product, we'll give you an honest quick-take. No charge, no strings.</p></div></div>
+<div class="expect-item"><div class="expect-num">03</div><div><h4>Outline an approach</h4><p>We'll sketch out what a project might look like — whether that's software, AI, automation, or a combination.</p></div></div>
 <div class="expect-item"><div class="expect-num">04</div><div><h4>Decide together</h4><p>If it's a fit, we'll send a detailed proposal within 48 hours. If not, we'll point you in the right direction anyway.</p></div></div>
 </div>
 <div style="margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm)">
@@ -1270,7 +1637,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   height="660"
   frameborder="0"
   style="display:block;border:none"
-  title="Book a Free Discovery Call with Orvexa Labs"
+  title="Book a Technology Discovery Call with Orvexa Labs"
   loading="lazy"
 ></iframe>
 </div>
@@ -1280,37 +1647,37 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 </div><!-- /page-book -->
 
-<!-- ===== BLOG PAGE ===== -->
+<!-- ===== INSIGHTS (BLOG) PAGE ===== -->
 <div class="page" id="page-blog">
 <div style="padding:140px 0 0">
 <div class="container">
 <div class="section-label">Insights</div>
-<h1 style="margin-bottom:16px">Thinking on <span class="grad-text">design & growth</span>.</h1>
-<p style="font-size:1.05rem;max-width:520px;margin-bottom:60px">Practical articles on web design, conversion, and building online presence that actually works.</p>
+<h1 style="margin-bottom:16px">Thinking on <span class="grad-text">technology & AI</span>.</h1>
+<p style="font-size:1.05rem;max-width:560px;margin-bottom:60px">Practical writing on AI adoption, automation, software and where technology in business is actually heading.</p>
 <div class="blog-grid">
 <div class="blog-card" onclick="showPage('blog-post-1')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Web conversion analytics"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Web Design</span><span>·</span><span>5 min read</span></div><h3>Why 90% of business websites don't convert — and what to do about it</h3><p>Most sites look fine but fail at the one job they're supposed to do: turn visitors into customers. Here's why.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=80" alt="AI automation opportunity"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>5 min read</span></div><h3>How businesses can identify their first AI automation opportunity</h3><p>You don't need a big AI strategy to start. You need one repetitive process worth automating first.</p></div></div>
 
 <div class="blog-card" onclick="showPage('blog-post-2')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80" alt="Page speed performance"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Performance</span><span>·</span><span>4 min read</span></div><h3>Page speed isn't optional: the revenue impact of slow websites</h3><p>A 1-second delay in load time can cost you 7% in conversions. Here's how to fix the most common culprits.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80" alt="Team discussing AI at work"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">AI &amp; Business</span><span>·</span><span>4 min read</span></div><h3>What AI actually means for employees in 2026</h3><p>Less about replacement, more about what your day-to-day work looks like once the repetitive parts are handled.</p></div></div>
 
 <div class="blog-card" onclick="showPage('blog-post-3')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80" alt="AI call assistant technology"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>6 min read</span></div><h3>AI call assistants explained: what they can (and can't) do for your business</h3><p>Cutting through the hype with an honest breakdown of what AI call assistants actually handle well.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Business workflow automation"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Automation</span><span>·</span><span>6 min read</span></div><h3>5 business workflows that are ready for automation</h3><p>From lead follow-up to invoice chasing — the workflows that consistently pay back the investment fastest.</p></div></div>
 
 <div class="blog-card" onclick="showPage('blog-post-4')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80" alt="Landing page design layout"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Design</span><span>·</span><span>7 min read</span></div><h3>The anatomy of a high-converting landing page in 2025</h3><p>Every section has a job. Here's what to include, what to cut, and the order that converts best.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80" alt="AI product design"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">AI &amp; Product</span><span>·</span><span>7 min read</span></div><h3>Building AI products responsibly</h3><p>What we think about before we ship an AI feature — including the claims we choose not to make.</p></div></div>
 
 <div class="blog-card" onclick="showPage('blog-post-5')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&q=80" alt="SEO search engine optimization"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">SEO</span><span>·</span><span>5 min read</span></div><h3>Technical SEO foundations every small business site needs from day one</h3><p>You don't need an enterprise SEO budget. You need to get the basics right. Here's exactly what that means.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80" alt="Cybersecurity and AI"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Cybersecurity</span><span>·</span><span>5 min read</span></div><h3>Why cybersecurity needs to evolve with AI</h3><p>AI changes both what needs protecting and how attackers operate. Here's what that means practically.</p></div></div>
 
 <div class="blog-card" onclick="showPage('blog-post-6')">
-<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=700&q=80" alt="Client strategy meeting briefing"/></div>
-<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Strategy</span><span>·</span><span>4 min read</span></div><h3>How to brief a web design agency without wasting everyone's time</h3><p>A good brief is the difference between a smooth project and a painful one. Here's the template we wish clients used.</p></div></div>
+<div class="blog-card-img"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Product development whiteboard"/></div>
+<div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Product Development</span><span>·</span><span>5 min read</span></div><h3>From idea to MVP: how technology products should actually be built</h3><p>The thinking behind how we approach OverCome — and how we'd approach your product idea, too.</p></div></div>
 </div>
 </div>
 <section style="padding-bottom:100px">
@@ -1330,25 +1697,24 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 1 ===== -->
 <div class="page" id="page-blog-post-1">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Web Design</span><span>·</span><span>5 min read</span><span>·</span><span style="color:var(--text3)">Jan 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Why 90% of business websites don't convert — and what to do about it</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Web analytics conversion" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>5 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">How businesses can identify their first AI automation opportunity</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80" alt="AI automation opportunity" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>Most business websites share the same problem: they look like websites, but they don't work like sales tools. They have a homepage, an about page, a services page, and a contact page — but nothing on any of those pages is designed to make a visitor take action.</p>
-<h2>The fundamental mistake</h2>
-<p>The biggest issue is that most websites are designed around the business's structure, not the customer's journey. You start with "About Us" because that's how companies think about themselves. But your visitor doesn't care about your history — they care about whether you can solve their problem.</p>
-<p>A conversion-focused website starts with the visitor's question: <em>Can this company help me, and why should I trust them?</em> Every page should answer that question faster and more convincingly than the last.</p>
-<h2>What actually drives conversions</h2>
-<p>Specificity. Vague copy like "we help businesses grow" converts worse than specific, measurable promises. One is a promise. The other is a platitude.</p>
-<p>Social proof positioned at decision points. A testimonial buried in the footer helps no one. Place it right before the CTA where doubt is highest.</p>
-<p>One clear call to action per page. Not five options. Not a cluttered nav with twelve destinations. One next step, clearly signposted.</p>
-<h2>The fix</h2>
-<p>Audit your current site with this question for every page: <em>What do I want the visitor to do after reading this?</em> If the answer isn't immediately obvious from the page design, that's your problem — and your starting point.</p>
+<p>Most businesses don't need an AI strategy document. They need one process that's currently wasting hours every week, and a clear-eyed look at whether AI can genuinely fix it.</p>
+<h2>Start with pain, not possibility</h2>
+<p>It's tempting to start by asking "where could we use AI?" That question is too open — almost anything qualifies, which means nothing gets prioritised. A better starting question is: what task does someone on your team dread doing every week because it's repetitive, manual, and doesn't require real judgement?</p>
+<h2>Look for structured, repeatable work</h2>
+<p>AI and automation are strongest where the input and output are predictable — answering the same category of question, sorting the same type of document, following the same decision tree every time. Highly judgement-based, relationship-driven work is usually the wrong place to start.</p>
+<h2>Measure before you build</h2>
+<p>Before recommending anything, we ask how often a task happens, how long it takes, and who does it. If a task takes 20 minutes a week, it's rarely worth automating yet. If it takes 20 minutes a day across three people, that's a real opportunity.</p>
+<h2>The first step is usually small</h2>
+<p>The businesses that succeed with AI don't start with a company-wide rollout. They start with one workflow, prove it works, and expand from there — which is exactly how we approach an AI workflow audit.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">Want a site that actually converts?</h3>
-<p style="margin-bottom:24px">That's exactly what we build. Book a free call to talk through your project.</p>
+<h3 style="margin-bottom:8px">Not sure where your first opportunity is?</h3>
+<p style="margin-bottom:24px">An AI workflow audit is exactly built to answer that question. Let's talk.</p>
 <a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
@@ -1357,25 +1723,23 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 2 ===== -->
 <div class="page" id="page-blog-post-2">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Performance</span><span>·</span><span>4 min read</span><span>·</span><span style="color:var(--text3)">Feb 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Page speed isn't optional: the revenue impact of slow websites</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=80" alt="Website speed performance" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">AI &amp; Business</span><span>·</span><span>4 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">What AI actually means for employees in 2026</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80" alt="Team discussing AI at work" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>Every second your website takes to load is costing you money. Google's own research shows a 1-second delay in mobile page load can reduce conversions by up to 20%. For most businesses, that's thousands of pounds left on the table every month.</p>
-<h2>Why speed matters more than ever</h2>
-<p>Users are less patient than they've ever been. The average person will abandon a page that takes more than 3 seconds to load. On mobile, it's even less forgiving. Google also uses page speed as a direct ranking signal — slow sites don't just lose customers, they lose visibility.</p>
-<h2>The most common culprits</h2>
-<p>Uncompressed images are the single biggest offender on most business websites. A hero image uploaded straight from a camera can be 4–8MB when it should be under 200KB. Next are unminified CSS and JavaScript files, too many third-party scripts (live chat, analytics, ad trackers), and no caching configured on the server.</p>
-<h2>What a fast site looks like</h2>
-<p>A well-optimised site should score 90+ on Google Lighthouse and load the first meaningful content within 1.5 seconds. This is achievable without exotic infrastructure — it just requires disciplined development practices from the start, not bolted on later.</p>
-<h2>The fix</h2>
-<p>Start with images — compress everything and use modern formats like WebP. Then audit your third-party scripts and remove anything non-essential. If you're on WordPress, a good caching plugin alone can cut load times by 40%. For anything beyond that, you likely need a developer to look at the actual build.</p>
+<p>Most of the anxiety around AI in the workplace comes from vague headlines, not lived experience. The teams we work with tend to feel very differently about AI once they've actually used it on a real task.</p>
+<h2>It's a shift in what fills your day, not whether you have one</h2>
+<p>For most roles, AI is removing the repetitive 20% of the job — drafting the first version of something, summarising a document, sorting through routine requests. What's left is usually the part people found more interesting to begin with.</p>
+<h2>The skill that matters most is knowing when to trust it</h2>
+<p>AI tools are confident even when they're wrong. The employees who get the most value from AI aren't the ones who use it for everything — they're the ones who've learned where it's reliable and where it needs a second look. That's a skill, and it's teachable.</p>
+<h2>Education beats mandate</h2>
+<p>Rolling out an AI tool without explaining how it works, what it's good at, and what it isn't, tends to create either blind over-reliance or total avoidance. A short, practical session usually does more than a company-wide policy document.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">Want a fast, high-scoring website?</h3>
-<p style="margin-bottom:24px">We build to Lighthouse 90+ as standard. Let's talk.</p>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h3 style="margin-bottom:8px">Want to bring your team up to speed?</h3>
+<p style="margin-bottom:24px">Our AI awareness seminars are built for exactly this. Let's talk.</p>
+<a href="#" onclick="showPage('contact')" class="btn btn-primary">Bring AI Into Your Business <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
 </div>
@@ -1383,23 +1747,26 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 3 ===== -->
 <div class="page" id="page-blog-post-3">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">AI &amp; Automation</span><span>·</span><span>6 min read</span><span>·</span><span style="color:var(--text3)">Mar 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">AI call assistants explained: what they can (and can't) do for your business</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&q=80" alt="AI voice technology" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Automation</span><span>·</span><span>6 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">5 business workflows that are ready for automation</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="Business workflow automation" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>AI call assistants have gone from a novelty to a genuine business tool in the space of two years. But there's still a lot of noise around what they actually do well — and where they fall short. This is an honest breakdown, not a sales pitch.</p>
-<h2>What AI call assistants genuinely do well</h2>
-<p>Handling calls when you're unavailable is the obvious one, but the value goes deeper. An AI assistant can answer the same FAQ a hundred times without getting tired or inconsistent. It can capture a caller's name, number, and reason for calling and deliver that as a neat summary to your inbox within seconds. For businesses that regularly miss calls outside of 9–5, this is a real revenue fix.</p>
-<p>Appointment booking is another strong use case. If you use a calendar tool like Cal.com or Calendly, an AI assistant can check availability and confirm a booking in real time, without any human involvement.</p>
-<h2>Where they're not the right fit</h2>
-<p>Complex, nuanced conversations are still better handled by humans. If a caller needs to discuss a sensitive complaint, negotiate pricing, or explain a complicated situation, an AI assistant will frustrate them rather than help. The technology is good at structured, predictable interactions — not emotional or high-stakes ones.</p>
-<h2>The bottom line</h2>
-<p>Think of an AI call assistant as a professional receptionist for your off-hours, not a replacement for your team. Used in the right context, it genuinely pays for itself in the first month through leads that would otherwise have gone to a competitor who picked up the phone.</p>
+<p>Some workflows are automation-ready right now — the pattern is predictable, the volume is high enough to matter, and the current process is entirely manual. Here are five we see most often.</p>
+<h2>1. Lead follow-up and qualification</h2>
+<p>New enquiries that sit unanswered for a day lose momentum fast. Automated first-response and qualification means every lead gets touched immediately, with a human stepping in once it's worth their time.</p>
+<h2>2. Invoice and payment chasing</h2>
+<p>Chasing overdue payments is repetitive, slightly awkward, and easy to automate with clear rules and escalation steps — without losing the option for a human to step in on sensitive accounts.</p>
+<h2>3. Customer support triage</h2>
+<p>Most support tickets fall into a handful of categories. Automatically routing, tagging and drafting first-response answers frees your team to focus on the tickets that actually need judgement.</p>
+<h2>4. Internal reporting</h2>
+<p>If someone on your team spends hours each week copying numbers between systems to build a report, that's almost always automatable — and it's one of the fastest wins we implement.</p>
+<h2>5. Onboarding new clients or staff</h2>
+<p>Document collection, account setup and welcome sequences follow the same steps every time. Automating the repetitive parts lets the human touchpoints feel more intentional, not less.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">Interested in an AI Call Assistant?</h3>
-<p style="margin-bottom:24px">We set them up for businesses in 1–2 days. Let's talk about whether it's right for you.</p>
+<h3 style="margin-bottom:8px">Recognise one of these in your business?</h3>
+<p style="margin-bottom:24px">Let's talk about what automating it would actually look like.</p>
 <a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
@@ -1408,27 +1775,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 4 ===== -->
 <div class="page" id="page-blog-post-4">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Design</span><span>·</span><span>7 min read</span><span>·</span><span style="color:var(--text3)">Apr 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">The anatomy of a high-converting landing page in 2025</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&q=80" alt="Landing page design" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">AI &amp; Product</span><span>·</span><span>7 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Building AI products responsibly</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80" alt="AI product design" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>A landing page has one job: get the visitor to take a specific action. Everything on the page — every word, image, and button — should either push them toward that action or get out of the way. Here's the structure that consistently works.</p>
-<h2>1. Hero section</h2>
-<p>You have about 5 seconds to answer three questions: What is this? Who is it for? Why should I care? Your headline should be specific and outcome-focused. "We help businesses grow" is not a headline — it's a platitude. "We build websites that turn visitors into leads" is a headline.</p>
-<h2>2. Social proof — earlier than you think</h2>
-<p>Most designers put testimonials at the bottom. Most high-converting pages put them near the top. Trust needs to be established before the visitor is willing to read your pitch, not after.</p>
-<h2>3. The offer block</h2>
-<p>Be specific about what you're offering and what happens next. "Book a call" is fine. "Book a free 30-minute call — no pitch, just strategy" is better. Specificity reduces friction.</p>
-<h2>4. Objection handling</h2>
-<p>Every visitor has silent objections: Is this too expensive? Will they actually deliver? What if it doesn't work? Your FAQ section, testimonials, and guarantee copy should address these directly — before the visitor has to ask.</p>
-<h2>5. One CTA, repeated</h2>
-<p>Don't offer multiple different actions. Pick one and repeat it at the top, middle, and bottom of the page. Consistency builds conviction. Variety creates confusion.</p>
+<p>It's easy to bolt an AI feature onto a product and call it innovation. It's harder — and more important — to think carefully about what that feature actually does to the person using it.</p>
+<h2>Be honest about what the product is, and isn't</h2>
+<p>This is something we think about directly with OverCome, our own AI-powered behaviour-change companion. It's designed to help people understand their patterns and get through difficult moments — it is not, and doesn't claim to be, a medical or therapeutic tool. Being precise about that distinction matters more than sounding impressive.</p>
+<h2>Design for the moment that matters</h2>
+<p>A lot of behaviour-change products default to gamification — streaks, badges, counters. We've chosen a different starting point for OverCome's MVP: the immediate craving. Streaks are easy to build and just as easy to break, and breaking one often pushes someone further into the behaviour they're trying to change. Support that shows up in the actual difficult moment tends to matter more than a number going up.</p>
+<h2>Privacy has to be architecture, not a policy page</h2>
+<p>When a product deals with something personal, privacy-conscious design needs to be a decision made at the data-model level, not a promise made in a privacy policy afterward.</p>
+<h2>Ship less, and be clear about what's next</h2>
+<p>Calling something "in development" instead of overselling it as finished isn't a weakness — it's what lets you build the next version based on what's actually true, not what sounded good in the pitch.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">Need a landing page that actually converts?</h3>
-<p style="margin-bottom:24px">We specialise in exactly this. Let's talk about your project.</p>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h3 style="margin-bottom:8px">Curious about OverCome?</h3>
+<p style="margin-bottom:24px">See where the product is headed and what we're building next.</p>
+<a href="#" onclick="showPage('products')" class="btn btn-primary">Explore OverCome <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
 </div>
@@ -1436,27 +1801,23 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 5 ===== -->
 <div class="page" id="page-blog-post-5">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">SEO</span><span>·</span><span>5 min read</span><span>·</span><span style="color:var(--text3)">May 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Technical SEO foundations every small business site needs from day one</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&q=80" alt="SEO search engine optimization" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Cybersecurity</span><span>·</span><span>5 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">Why cybersecurity needs to evolve with AI</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80" alt="Cybersecurity and AI" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>SEO doesn't have to be complicated. For most small businesses, the difference between ranking and not ranking comes down to a handful of technical basics — none of which require an agency retainer or specialist knowledge to implement.</p>
-<h2>Clean page titles and meta descriptions</h2>
-<p>Every page on your site should have a unique title tag (under 60 characters) and meta description (under 160 characters) that accurately describes what's on that page. This is the first thing Google reads and the first thing a potential customer sees in search results. Get this wrong and everything else is harder.</p>
-<h2>Proper heading structure</h2>
-<p>Each page should have exactly one H1 — your main headline. Subheadings should use H2 and H3 in a logical hierarchy. This tells search engines how your content is organised and makes it easier for them to understand what each section covers.</p>
-<h2>An XML sitemap</h2>
-<p>A sitemap tells Google which pages exist on your site and how they relate to each other. Most platforms generate this automatically — you just need to submit it to Google Search Console, which is free and takes ten minutes to set up.</p>
-<h2>Mobile responsiveness and HTTPS</h2>
-<p>Google ranks mobile-first. If your site doesn't work properly on a phone, you're being penalised. HTTPS (the padlock in the browser bar) is also a ranking signal and a trust signal — any site without it looks unprofessional in 2025.</p>
-<h2>Page speed</h2>
-<p>Already covered in a separate post, but worth repeating: speed is a direct Google ranking factor. Aim for a Lighthouse performance score above 85 as a baseline.</p>
+<p>AI changes two things at once: what's worth protecting, and how the people trying to get past your defences operate. Security thinking has to account for both.</p>
+<h2>New surface area</h2>
+<p>Once a business connects an AI assistant to internal data, or lets a model take actions on its behalf, that integration becomes part of the attack surface. Access controls, data boundaries and audit trails need to be designed in from the start — not added once something goes wrong.</p>
+<h2>Attacks are getting more convincing</h2>
+<p>Phishing emails, fake support messages and impersonation attempts are harder to spot when they're written well and personalised at scale. Technical defences matter, but so does re-training people's instincts for what to trust.</p>
+<h2>Security-conscious engineering is a default, not an add-on</h2>
+<p>We treat this as a baseline requirement for anything we build, whether it's a client system or one of our own products — data handled with intention, access scoped tightly, and privacy considered at the architecture stage rather than bolted on later.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">We build with SEO foundations baked in</h3>
-<p style="margin-bottom:24px">Every Orvexa project ships with proper meta tags, sitemap, and performance optimisation. Let's talk.</p>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h3 style="margin-bottom:8px">Integrating AI into your business?</h3>
+<p style="margin-bottom:24px">Let's make sure it's built securely from day one.</p>
+<a href="#" onclick="showPage('services')" class="btn btn-primary">See Our AI Integration Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
 </div>
@@ -1464,27 +1825,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <!-- ===== BLOG POST 6 ===== -->
 <div class="page" id="page-blog-post-6">
 <div style="padding:140px 0 100px"><div class="container-sm">
-<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Blog</a>
-<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Strategy</span><span>·</span><span>4 min read</span><span>·</span><span style="color:var(--text3)">Jun 2025</span></div>
-<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">How to brief a web design agency without wasting everyone's time</h1>
-<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&q=80" alt="Client strategy briefing meeting" style="width:100%;height:100%;object-fit:cover"/></div>
+<a href="#" onclick="showPage('blog')" style="display:inline-flex;align-items:center;gap:6px;color:var(--text3);font-size:.85rem;margin-bottom:32px;transition:var(--trans)" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Insights</a>
+<div class="blog-meta" style="margin-bottom:16px"><span class="blog-cat">Product Development</span><span>·</span><span>5 min read</span></div>
+<h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px">From idea to MVP: how technology products should actually be built</h1>
+<div style="height:360px;border-radius:var(--r);margin-bottom:40px;overflow:hidden"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&q=80" alt="Product development whiteboard" style="width:100%;height:100%;object-fit:cover"/></div>
 <div class="legal-content" style="font-size:.97rem;line-height:1.85">
-<p>A bad brief leads to a bad project — or at minimum, a slower, more expensive one. Most of the friction that happens mid-project (scope creep, missed expectations, revision rounds) can be traced back to a brief that wasn't clear enough at the start. Here's how to get it right.</p>
-<h2>Start with the goal, not the design</h2>
-<p>The most common mistake in a brief is leading with "I want a clean, modern website" rather than "I want my website to generate 20 qualified enquiries per month." The first tells an agency what style you like. The second tells them what you actually need — and lets them design toward an outcome, not a preference.</p>
-<h2>Tell them who you're talking to</h2>
-<p>Your target customer is the most important thing an agency needs to understand. Their age, profession, what they care about, what makes them sceptical, what would make them click. The more specific you are, the better the output.</p>
-<h2>Share what you like — and what you don't</h2>
-<p>Send three or four website examples you admire and explain specifically what you like about each one. Do the same for sites you don't like. "I like the clean layout of this one but not the dark colour scheme" is infinitely more useful than "make it look premium."</p>
-<h2>Be upfront about budget and timeline</h2>
-<p>Agencies price work based on scope. If you're not transparent about your budget, you'll get a proposal that guesses — and it might be wildly off in either direction. A good agency will tell you honestly what's achievable within your range, not upsell you.</p>
-<h2>The one question every brief should answer</h2>
-<p>If a visitor lands on your homepage and does nothing else, what's the one thing you want them to do? If you can answer that clearly, you've already given an agency more than most clients do.</p>
+<p>Most early-stage products fail not because the idea was bad, but because the MVP tried to do too much. This is the thinking we apply to our own product, OverCome, and to any product work we take on.</p>
+<h2>Find the one moment that matters most</h2>
+<p>Every product idea has dozens of features that feel necessary. Almost none of them are, at first. The job at MVP stage is finding the single moment where your product needs to prove its value — for OverCome, that's the immediate craving, not the long-term habit tracker.</p>
+<h2>Design around that moment, not around the feature list</h2>
+<p>Once you know the moment that matters, most feature decisions become easier: does this help someone in that exact moment, or is it something that can wait for version two?</p>
+<h2>Build it like it has to work, not like it has to impress</h2>
+<p>An MVP's job is to be honest with you about whether the idea works. Overbuilding the interface before validating the core mechanic just delays finding out.</p>
+<h2>Treat "in development" as an honest, useful state</h2>
+<p>A product doesn't need to be finished to be real. Being upfront that something is still in development — while showing the thinking behind it — builds more trust than pretending it's more finished than it is.</p>
 </div>
 <div style="margin-top:48px;padding:32px;background:var(--surface);border:1px solid rgba(108,59,255,0.2);border-radius:var(--r);text-align:center">
-<h3 style="margin-bottom:8px">We make the briefing process easy</h3>
-<p style="margin-bottom:24px">Our discovery call walks you through everything we need to know. No homework required.</p>
-<a href="#" onclick="showPage('book')" class="btn btn-primary">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h3 style="margin-bottom:8px">Got a product idea?</h3>
+<p style="margin-bottom:24px">We help founders and businesses turn early ideas into working MVPs.</p>
+<a href="#" onclick="showPage('book')" class="btn btn-primary">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div></div>
 </div>
@@ -1495,14 +1854,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="container-sm">
 <div class="section-label">Legal</div>
 <h1 style="margin-bottom:8px">Privacy Policy</h1>
-<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: January 2025</p>
+<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: August 2026</p>
 <div class="legal-content">
-<p>This Privacy Policy describes how Orvexa Labs ("we", "us", or "our") collects, uses, and shares information about you when you use our website and services.</p>
+<p>This Privacy Policy describes how Orvexa Labs ("we", "us", or "our") collects, uses, and shares information about you when you use our website, products, and services.</p>
 <h2>Information we collect</h2>
 <p>We collect information you provide directly to us, such as when you fill in a contact form, book a call, or communicate with us by email or phone. This includes your name, email address, phone number, and any other information you choose to provide.</p>
 <p>We also automatically collect certain technical information when you visit our website, including your IP address, browser type, and pages visited, through analytics tools.</p>
 <h2>How we use your information</h2>
-<p>We use the information we collect to respond to your enquiries, provide our services, improve our website, and communicate with you about projects and updates. We do not sell your personal information to third parties.</p>
+<p>We use the information we collect to respond to your enquiries, provide our services, improve our website and products, and communicate with you about projects and updates. We do not sell your personal information to third parties.</p>
 <h2>Data retention</h2>
 <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, or as required by law. You may request deletion of your data at any time by contacting us.</p>
 <h2>Contact us</h2>
@@ -1518,15 +1877,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="container-sm">
 <div class="section-label">Legal</div>
 <h1 style="margin-bottom:8px">Terms of Service</h1>
-<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: January 2025</p>
+<p style="margin-bottom:48px;font-size:.88rem;color:var(--text3)">Last updated: August 2026</p>
 <div class="legal-content">
 <p>These Terms of Service govern your use of the Orvexa Labs website and services. By engaging our services, you agree to these terms.</p>
 <h2>Services</h2>
-<p>Orvexa Labs provides web design, development, and AI call assistant services. Specific deliverables, timelines, and pricing are defined in individual project proposals and contracts.</p>
+<p>Orvexa Labs provides software development, mobile app development, AI integration, business automation, custom software and technology consulting services, alongside our own technology products. Specific deliverables, timelines, and pricing are defined in individual project proposals and contracts.</p>
 <h2>Payment</h2>
 <p>Projects require a deposit (typically 50%) before work begins. The remaining balance is due upon project completion and prior to final delivery. Rush fees may apply for expedited timelines.</p>
 <h2>Intellectual property</h2>
-<p>Upon receipt of full payment, all design files, code, and assets created for your project transfer to you as the client. We retain the right to display work in our portfolio unless a confidentiality agreement is in place.</p>
+<p>Upon receipt of full payment, all design files, code, and assets created for your project transfer to you as the client. We retain the right to display work in our portfolio unless a confidentiality agreement is in place. Orvexa Labs' own products, including OverCome, remain the intellectual property of Orvexa Labs.</p>
 <h2>Revisions</h2>
 <p>The number of included revision rounds is specified in each project proposal. Additional revisions beyond the included rounds are charged at our standard hourly rate.</p>
 <h2>Limitation of liability</h2>
@@ -1544,7 +1903,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <div class="footer-inner">
 <div class="footer-brand">
 <a class="nav-logo" href="#" onclick="showPage('home')"><span>Orvexa</span> Labs</a>
-<p>Premium web design and AI solutions for businesses that take their digital presence seriously.</p>
+<p>Orvexa Labs builds digital products and helps businesses turn technology, AI and automation into real-world solutions.</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
 <a href="tel:+447405092285" style="font-size:.82rem;color:var(--text3)">+44 7405 092285</a>
 <span style="color:var(--text3)">·</span>
@@ -1552,33 +1911,41 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </div>
 </div>
 <div class="footer-col">
+<h5>Products</h5>
+<a href="#" onclick="showPage('products')">OverCome</a>
+<a href="#" onclick="showPage('products')">Our Products</a>
+<a href="#" onclick="goHome('lab')">The Lab</a>
+</div>
+<div class="footer-col">
 <h5>Services</h5>
-<a href="#" onclick="showPage('services')">Web Design</a>
-<a href="#" onclick="showPage('services')">Development</a>
-<a href="#" onclick="showPage('services')">Landing Pages</a>
-<a href="#" onclick="showPage('services')">AI Call Assistants</a>
+<a href="#" onclick="showPage('services')">Software Development</a>
+<a href="#" onclick="showPage('services')">AI Integration</a>
+<a href="#" onclick="showPage('services')">Automation</a>
+<a href="#" onclick="showPage('services')">AI Education</a>
+<a href="#" onclick="showPage('services')">Technology Consulting</a>
 </div>
 <div class="footer-col">
 <h5>Company</h5>
 <a href="#" onclick="showPage('about')">About</a>
 <a href="#" onclick="showPage('work')">Work</a>
-<a href="#" onclick="showPage('pricing')">Pricing</a>
-<a href="#" onclick="showPage('blog')">Blog</a>
+<a href="#" onclick="showPage('blog')">Insights</a>
+<a href="#" onclick="showPage('contact')">Careers</a>
 </div>
 <div class="footer-col">
 <h5>Connect</h5>
 <a href="#" onclick="showPage('contact')">Contact</a>
-<a href="#" onclick="showPage('book')">Book a Call</a>
-<a href="#" onclick="showPage('privacy')">Privacy Policy</a>
-<a href="#" onclick="showPage('terms')">Terms of Service</a>
+<a href="#" onclick="showPage('book')">Start a Project</a>
+<a href="#" target="_blank" rel="noopener">LinkedIn</a>
+<a href="#" target="_blank" rel="noopener">Instagram</a>
+<a href="#" target="_blank" rel="noopener">GitHub</a>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 Orvexa Labs. All rights reserved.</p>
+<p>© 2026 Orvexa Labs. All rights reserved.</p>
 <div class="socials">
 <a href="#" class="social-link">in</a>
-<a href="#" class="social-link">tw</a>
 <a href="#" class="social-link">ig</a>
+<a href="#" class="social-link">gh</a>
 </div>
 </div>
 </div>
@@ -1599,6 +1966,15 @@ function showPage(id) {
   document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
     a.classList.toggle('active', a.dataset.page === id);
   });
+}
+
+// ── NAV: JUMP TO HOME + SCROLL TO ANCHOR (e.g. The Lab) ──
+function goHome(anchorId) {
+  showPage('home');
+  setTimeout(() => {
+    const el = document.getElementById(anchorId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
 }
 
 // ── MOBILE NAV ──
@@ -1649,17 +2025,25 @@ function showToast(msg, type = 'success', duration = 4000) {
   }, duration);
 }
 
+// ── CONTACT FORM: "WHAT CAN WE HELP WITH" PILLS ──
+document.addEventListener('click', function(e) {
+  if (e.target.classList && e.target.classList.contains('pill-check')) {
+    e.target.classList.toggle('active');
+  }
+});
+
 // ── CONTACT FORM ──
 async function submitForm() {
   const name     = document.getElementById('cf-name').value.trim();
   const email    = document.getElementById('cf-email').value.trim();
   const biz      = document.getElementById('cf-biz').value.trim();
+  const helpWith = Array.from(document.querySelectorAll('#cf-help .pill-check.active')).map(p => p.dataset.value).join(', ');
   const budget   = document.getElementById('cf-budget').value;
   const timeline = document.getElementById('cf-timeline').value;
   const msg      = document.getElementById('cf-msg').value.trim();
 
   if (!name || !email || !msg) {
-    showToast('Please fill in your name, email, and message.', 'error');
+    showToast('Please fill in your name, email, and tell us about the challenge.', 'error');
     return;
   }
 
@@ -1673,7 +2057,7 @@ async function submitForm() {
     const res = await fetch('https://formspree.io/f/xreoryrl', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name, email, business: biz, budget, timeline, message: msg })
+      body: JSON.stringify({ name, email, organisation: biz, help_with: helpWith, budget, timeline, message: msg })
     });
 
     if (res.ok) {
@@ -1720,7 +2104,7 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
 
 // ── TYPEWRITER ──
 (function() {
-  const words = ['premium','powerful','modern','stunning'];
+  const words = ['technology','software','AI','automation'];
   let wi = 0, ci = 0, deleting = false;
   const el = document.getElementById('tw-word');
   if (!el) return;
@@ -1873,7 +2257,8 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
     '.process-step', '.why-item', '.testi-card',
     '.pricing-card', '.blog-card', '.affect-item', '.deliverable',
     '.service-detail-header', '.contact-detail', '.expect-item',
-    '.value-item'
+    '.value-item', '.flow-step', '.build-item', '.lab-card', '.seminar-card',
+    '.product-feature'
   ];
   document.querySelectorAll(selectors.join(',')).forEach((el, i) => {
     el.classList.add('reveal');
@@ -1958,5 +2343,6 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
     </filter>
   </defs>
 </svg>
+
 </body>
 </html>
